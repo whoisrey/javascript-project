@@ -1,0 +1,67 @@
+/* 숨김 처리 */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* 초기화 */
+body,
+header,
+main,
+footer,
+div,
+section,
+h1,
+h2,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+button {
+  background: transparent;
+  border: none;
+}
+
+body {
+  background: linear-gradient(to right, #f0f4ff, #a5b6ee);
+}
+
+.container {
+  width: 400px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+main {
+  color: white;
+  background: linear-gradient(to right, #5572bb, #374b7c);
+  box-shadow: 20px 20px 60px 10px #374b7c66;
+  border-radius: 16px;
+  margin: 60px auto;
+  padding: 48px 58px 40px;
+}
+
+.name::after {
+  content: "";
+  display: block;
+  width: 312px;
+  height: 1px;
+  background-color: #3d538a;
+  margin-top: 23px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  color: #a5b6ee;
+  font-weight: bold;
+  padding-top: 33px;
+  margin-bottom: 40px;
+}
