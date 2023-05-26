@@ -1,1 +1,1 @@
-javascript-project
+javascript-project [basic]
