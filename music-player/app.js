@@ -46,7 +46,6 @@ function togglePlay() {
 
 function playMusic() {
   isPlaying = true;
-  // Change play button icon
   playBtn.classList.replace("fa-play", "fa-pause");
   // Set button hover title
   playBtn.setAttribute("title", "Pause");
@@ -104,3 +103,49 @@ music.addEventListener("timeupdate", updateProgressBar);
 playerProgress.addEventListener("click", setProgressBar);
 
 loadMusic(songs[musicIndex]);
+
+// Repeat //
+const repeatBtn = document.getElementById("repeat");
+
+function toggleRepeat() {
+  if (music.loop) {
+    music.loop = false;
+    repeatBtn.classList.remove("active");
+    repeatBtn.setAttribute("title", "Repeat");
+  } else {
+    music.loop = true;
+    repeatBtn.classList.add("active");
+    repeatBtn.setAttribute("title", "No repeat");
+  }
+}
+
+repeatBtn.addEventListener("click", toggleRepeat);
+
+// Shuffle //
+const shuffleBtn = document.getElementById("shuffle");
+let shuffleMode = false;
+
+function toggleShuffle() {
+  shuffleMode = !shuffleMode;
+  if (shuffleMode) {
+    shuffleBtn.classList.add("active");
+    shuffleBtn.setAttribute("title", "No shuffle");
+  } else {
+    shuffleBtn.classList.remove("active");
+    shuffleBtn.setAttribute("title", "Shuffle");
+  }
+}
+
+function changeMusic(direction) {
+  musicIndex = (musicIndex + direction + songs.length) % songs.length;
+  loadMusic(songs[musicIndex]);
+  playMusic();
+
+  if (shuffleMode) {
+    musicIndex = Math.floor(Math.random() * songs.length);
+    loadMusic(songs[musicIndex]);
+    playMusic();
+  }
+}
+
+shuffleBtn.addEventListener("click", toggleShuffle);
