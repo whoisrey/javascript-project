@@ -94,34 +94,46 @@ const highlighterRemover = (className) => {
 
 window.onload = intializer();
 
-// 이미지 삽입 버튼과 이미지 입력 필드, 이미지 삽입 영역을 가져옵니다.
+// 이미지 삽입 버튼, 이미지 입력 필드 상수 선언
 const insertImageButton = document.getElementById("insertImage");
 const imageInput = document.getElementById("image-input");
 
-// 이미지 삽입 버튼 클릭 시 동작할 함수를 정의합니다.
+// 이미지 삽입 버튼 클릭 시 동작
 insertImageButton.addEventListener("click", () => {
-  // 이미지 입력 필드 클릭을 트리거합니다.
   imageInput.click();
 });
 
-// 이미지 입력 필드 값이 변경되었을 때 동작할 함수를 정의합니다.
+// 이미지 입력 필드 값이 변경
 imageInput.addEventListener("change", () => {
-  // 선택한 이미지 파일을 가져옵니다.
   const file = imageInput.files[0];
 
   if (file) {
-    // FileReader 객체를 사용하여 이미지 파일을 읽습니다.
+    // FileReader 객체
     const reader = new FileReader();
     reader.onload = function (event) {
-      // 이미지를 삽입할 img 요소를 생성하고, 읽어온 이미지 데이터를 설정합니다.
       const imageElement = document.createElement("img");
       imageElement.src = event.target.result;
-
-      // 이미지를 이미지 삽입 영역에 추가합니다.
       writingArea.appendChild(imageElement);
     };
 
-    // 이미지 파일을 읽습니다.
     reader.readAsDataURL(file);
   }
 });
+
+// 글자수세기
+const updateCharacterCount = () => {
+  const text = writingArea.innerText;
+  const characterCount = text.trim().length;
+  // 글자 수를 표시할 요소를 선택합니다.
+  const characterCountElement = document.getElementById("character-count");
+  characterCountElement.textContent = characterCount;
+};
+
+// 텍스트 입력이 변경될 때마다 글자 수 업데이트 함수를 호출합니다.
+writingArea.addEventListener("input", updateCharacterCount);
+
+// 페이지 로드 시 초기 글자 수를 업데이트합니다.
+window.onload = () => {
+  updateCharacterCount();
+  intializer();
+};
