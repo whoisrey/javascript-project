@@ -1,6 +1,7 @@
 let runningTotal = 0;
 let buffer = '0';
 let previousOperator;
+let shouldResetBuffer = false;
 
 const screen = document.querySelector('.screen');
 
@@ -25,7 +26,7 @@ function handleSymbol(symbol) {
       }
       flushOperation(parseInt(buffer));
       previousOperator = null;
-      buffer = runningTotal;
+      buffer = runningTotal.toString();
       runningTotal = 0;
       break;
     case '←':
@@ -57,7 +58,7 @@ function handleMath(symbol) {
     flushOperation(intBuffer);
   }
   previousOperator = symbol;
-  buffer = '0';
+  shouldResetBuffer = true;
 }
 
 function flushOperation(intBuffer) {
@@ -73,8 +74,9 @@ function flushOperation(intBuffer) {
 }
 
 function handleNumber(numberString) {
-  if (buffer === '0') {
+  if (buffer === '0' || shouldResetBuffer) {
     buffer = numberString;
+    shouldResetBuffer = false;
   } else {
     buffer += numberString;
   }
