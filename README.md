@@ -6,4 +6,5 @@ decision : https://withleche.github.io/javascript-project/decision <br>
 music-player : https://withleche.github.io/javascript-project/music-player <br>
 movie-guide-app : https://withleche.github.io/javascript-project/movie-guide-app <br>
 text-editor: https://withleche.github.io/javascript-project/text-editor <br>
-calculator: https://withleche.github.io/javascript-project/calculator
+calculator: https://withleche.github.io/javascript-project/calculator <br>
+box-shadow-generator: https://withleche.github.io/javascript-project/shadow-generator
