@@ -33,6 +33,13 @@ function generateStyles() {
 
   // textarea 스타일 업데이트
   styles.textContent = `box-shadow: ${boxShadow}; \nborder-radius: ${borderRadius}px;`;
+
+  // background-color 관련 코드
+
+  const backgroundColor = document.getElementById("background-color").value;
+  preview.style.backgroundColor = backgroundColor;
+  document.body.style.backgroundColor = backgroundColor;
+  copyButton.style.backgroundColor = backgroundColor;
 }
 
 // hex color 코드
@@ -55,3 +62,7 @@ function copyStyles() {
 }
 
 generateStyles();
+
+document.body.style.backgroundColor = "#311b92";
+copyButton.style.backgroundColor = "#311b92";
+preview.style.backgroundColor = "#311b92";
