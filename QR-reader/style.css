@@ -9,11 +9,17 @@
 
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 0 10px;
     background: #06283d;
+}
+
+h1{
+    color: teal;
+    margin-bottom: 30px;
 }
 
 .wrapper{
@@ -46,6 +52,13 @@ body{
 .wrapper.active form{
     height: 225px;
     pointer-events: none;
+}
+
+.wrapper:hover{
+    background: teal;
+}
+.wrapper:hover i.fa-solid.fa-cloud-arrow-up{
+    color: teal;
 }
 
 form img{
