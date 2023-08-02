@@ -13,13 +13,13 @@ body{
     justify-content: center;
     min-height: 100vh;
     padding: 0 10px;
-    background: #06283d;
+    background: #6521D3;
 }
 
 .wrapper{
     height: 270px;
     width: 420px;
-    background-color: #334155;
+    background-color: #A16FF4;
     border-radius: 7px;
     padding: 30px 30px 35px;
     transition: all 0.2s ease;
