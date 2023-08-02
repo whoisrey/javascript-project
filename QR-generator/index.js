@@ -6,11 +6,23 @@ const qrText = document.querySelector(".qr-text");
 const shareBtn = document.querySelector(".share-btn");
 const sizes = document.querySelector(".sizes");
 
+// image
+// const imageUpload = document.getElementById("image-upload");
+
+// logo
+// const logoUpload = document.getElementById("logo-upload");
+
 dark.addEventListener("input", handleDarkColor);
 light.addEventListener("input", handleLightColor);
 qrText.addEventListener("input", handleQRText);
 sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
+
+// image
+// imageUpload.addEventListener("change", handleImageUpload);
+
+// logo
+// logoUpload.addEventListener("change", handleLogoUpload);
 
 const defaultUrl = "https://youtube.com/@AsmrProg";
 let colorLight = "#fff",
@@ -37,14 +49,65 @@ function handleQRText(e) {
   generateQRCode();
 }
 
-async function generateQRCode() {
+// image
+// async function handleImageUpload(e) {
+//   const file = e.target.files[0];
+//   console.log(file);
+//   if (file) {
+//     try {
+//       const dataUrl = await readFileAsDataURL(file);
+//       generateQRCode(dataUrl);
+//     } catch (error) {
+//       console.error("Error reading the file:", error);
+//     }
+//   }
+// }
+
+// function readFileAsDataURL(file) {
+//   return new Promise((resolve, reject) => {
+//     const reader = new FileReader();
+//     console.log(reader);
+//     reader.onload = (e) => resolve(e.target.result);
+//     reader.onerror = reject;
+//     reader.readAsDataURL(file);
+//   });
+// }
+
+// logo
+// async function handleLogoUpload(e) {
+//   const file = e.target.files[0];
+//   console.log(file);
+//   if (file) {
+//     try {
+//       const logoDataURL = await readFileAsDataURL(file);
+//       generateQRCode(null, logoDataURL);
+//     } catch (error) {
+//       console.error("Error reading the logo file:", error);
+//     }
+//   }
+// }
+
+// image logo
+// function readFileAsDataURL(file) {
+//   return new Promise((resolve, reject) => {
+//     const reader = new FileReader();
+//     console.log(reader);
+//     reader.onload = (e) => resolve(e.target.result);
+//     reader.onerror = reject;
+//     reader.readAsDataURL(file);
+//   });
+// }
+
+async function generateQRCode(imageDataURL, logoDataURL) {
   qrContainer.innerHTML = "";
+  console.log(logoDataURL);
   new QRCode("qr-code", {
     text,
     height: size,
     width: size,
     colorLight,
     colorDark,
+    logo: logoDataURL,
   });
   download.href = await resolveDataUrl();
 }

@@ -29,19 +29,25 @@
             </select>
         </div>
         <input type="text" class="qr-text" placeholder="Enter QR Text">
+
+        <!-- 이미지 업로드 -->
+        <!-- <input type="file" id="image-upload" accept="image/*"> -->
+        <!-- 로고 업로드 -->
+        <!-- <input type="file" id="logo-upload" accept="image/*"> -->
+
+
         <div id="qr-code"></div>
         <div class="action-container">
             <a href="#" class="download btn" download="QRCode">
                 <span>Download</span>
-                <img src="download.svg" alt="">
+                <img src="./images/download.svg" alt="">
             </a>
             <button class="btn share-btn">
                 <span>Share</span>
-                <img src="share.svg" alt="">
+                <img src="./images/share.svg" alt="">
             </button>
         </div>
     </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="index.js"></script>
 </body>
