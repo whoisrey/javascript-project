@@ -30,16 +30,19 @@ let colorLight = "#fff",
   text = defaultUrl,
   size = 300;
 
+// Dark 값 받아오는 함수
 function handleDarkColor(e) {
   colorDark = e.target.value;
   generateQRCode();
 }
 
+// Light 값 받는 함수
 function handleLightColor(e) {
   colorLight = e.target.value;
   generateQRCode();
 }
 
+// QR Text 받는 함수
 function handleQRText(e) {
   const value = e.target.value;
   text = value;
@@ -49,7 +52,7 @@ function handleQRText(e) {
   generateQRCode();
 }
 
-// image
+// image 받는 함수
 // async function handleImageUpload(e) {
 //   const file = e.target.files[0];
 //   console.log(file);
@@ -63,6 +66,7 @@ function handleQRText(e) {
 //   }
 // }
 
+// 업로드한 파일 받는 함수
 // function readFileAsDataURL(file) {
 //   return new Promise((resolve, reject) => {
 //     const reader = new FileReader();
@@ -98,6 +102,7 @@ function handleQRText(e) {
 //   });
 // }
 
+// QR 코드 만들어주는 함수
 async function generateQRCode(imageDataURL, logoDataURL) {
   qrContainer.innerHTML = "";
   console.log(logoDataURL);
@@ -112,6 +117,7 @@ async function generateQRCode(imageDataURL, logoDataURL) {
   download.href = await resolveDataUrl();
 }
 
+// 공유하는 함수
 async function handleShare() {
   setTimeout(async () => {
     try {
@@ -130,6 +136,7 @@ async function handleShare() {
   }, 100);
 }
 
+// 사이즈 조절해주는 함수
 function handleSize(e) {
   size = e.target.value;
   generateQRCode();
