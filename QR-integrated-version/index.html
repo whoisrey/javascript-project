@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator|READER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="generator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="reader.css">
+
+</head>
+
+<body>
+    <header>
+    <nav id="tab-button-nav">
+      <button class="tab-button" data-tab-section="tab-section-1">QR Generator</button>
+      <button class="tab-button" data-tab-section="tab-section-2">QR Reader</button>
+    </nav>
+    </header>
+    <main>
+        <br>
+        <!-- QR Generator -->
+        <section id="tab-section-1" class="tab-section">
+            <section>
+                <div class="row">
+                    <select class="sizes">
+                        <option value="100">100×100</option>
+                        <option value="200">200×200</option>
+                        <option value="300">300×300</option>
+                        <option selected value="400">400×400</option>
+                        <option value="500">500×500</option>
+                        <option value="600">600×600</option>
+                        <option value="700">700×700</option>
+                        <option value="800">800×800</option>
+                        <option value="900">900×900</option>
+                        <option value="1000">1000×1000</option>
+                    </select>
+                </div>
+                <input type="text" class="qr-text" placeholder="Enter QR Text">
+                <div id="qr-code"></div>
+                <div class="action-container">
+                    <a href="#" class="download btn" download="QRCode">
+                        <span>Download</span>
+                        <img src="./download.svg" alt="">
+                    </a>
+                    <button class="btn share-btn">
+                        <span>Share</span>
+                        <img src="./share.svg" alt="">
+                    </button>
+                </div>
+            </section>
+        </section>
+        <!-- QR Reader -->
+        <section id="tab-section-2" class="tab-section" hidden>
+            <div class="wrapper">
+                <form action="#">
+                    <input class="fileInp" type="file" hidden>
+                    <img src="#" alt="">
+                    <div class="content">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p>Upload QR Code To Read</p>
+                    </div>
+                </form>
+                <div class="details">
+                    <textarea spellcheck="false" disabled></textarea>
+                    <div class="buttons">
+                        <button class="close">
+                            Close
+                            <i class="fa-solid fa-close"></i>
+                        </button>
+                        <button class="copy">
+                            Copy Text
+                            <i class="fa-solid fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+    <script src="generator.js"></script>
+    <script src="reader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+
+</html>
