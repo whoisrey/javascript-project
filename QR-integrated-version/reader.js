@@ -36,6 +36,34 @@ function fetchRequest(file, formData) {
     });
 }
 
+// 클립보드에 텍스트를 복사
+copyBtn.addEventListener("click", () => {
+  let text = document.querySelector("textarea").textContent;
+  navigator.clipboard.writeText(text);
+});
+
+// 이미지를 드래그해서 업로드하는 기능 추가
+form.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  document.body.classList.add("active");
+});
+
+form.addEventListener("dragleave", () => {
+  document.body.classList.remove("active");
+});
+
+form.addEventListener("drop", (e) => {
+  e.preventDefault();
+  document.body.classList.remove("active");
+
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file);
+  fetchRequest(file, formData);
+});
+
 // 이미지 파일을 서버로 보내어 QR 코드를 스캔하고 스캔 결과를 화면에 표시하는 기능
 // 파일 입력 요소의 값이 변경 되었을 때 실행
 fileInp.addEventListener("change", async (e) => {
@@ -60,5 +88,10 @@ copyBtn.addEventListener("click", () => {
 
 // form요소 클릭시 fileInp 이벤트 리스너 함수 호출
 form.addEventListener("click", () => fileInp.click());
+
 // closeBtn 클릭시 wrapper.active 클래스 제거
-closeBtn.addEventListener("click", () => wrapper.classList.remove("active"));
+closeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  wrapper.classList.remove("active");
+  fileInp.value = "";
+});

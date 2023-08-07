@@ -1,7 +1,7 @@
 .wrapper{
     height: 270px;
     width: 420px;
-    background-color: #d3432a;
+    background-color: #d197dd;
     border-radius: 7px;
     padding: 30px 30px 35px;
     transition: all 0.2s ease;
@@ -19,7 +19,7 @@
     user-select: none;
     text-align: center;
     border-radius: 7px;
-    background: #fff;
+    background: linear-gradient(90deg, rgba(209,151,218,1) 0%, rgba(173,37,226,1) 100%);
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
@@ -44,12 +44,12 @@ form img{
 }
 
 form .content i{
-    color: #c74d3f8e;
+    color: #dbdbdb;
     font-size: 55px;
 }
 
 form .content p{
-    color: #c74d3f8e;
+    color: #dbdbdb;
     margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
@@ -111,9 +111,9 @@ textarea:hover::-webkit-scrollbar-thumb{
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
-    color: #334155;
+    color: #d197dd;
     border-radius: 5px;
-    background: #fff;
+    background: #dbdbdb;
     transition: transform 0.3s ease;
     width: calc(100% / 2 - 10px);
     display: flex;

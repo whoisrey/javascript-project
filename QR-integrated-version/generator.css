@@ -46,7 +46,8 @@ a{
     align-items: center;
     justify-content: center;
     border-radius: 0px;
-    box-shadow:inset 0 0 500px rgba(88, 88, 88, 0.103);
+    /* background: linear-gradient(90deg, rgba(42,193,188,1) 0%, rgba(173,37,226,1) 100%); */
+    box-shadow:inset 0 0 500px #3F4043;
 }
 
 #qr-code img, #qr-code canvas{
@@ -74,7 +75,7 @@ a{
     color: #fff;
     max-width: 200px;
     padding: 14px;
-    background:#cf5742;
+    background:#229289;
     border-radius: 4px;
     border: none;
     display: flex;
