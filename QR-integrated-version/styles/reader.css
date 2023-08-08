@@ -1,7 +1,7 @@
 .wrapper{
     height: 270px;
     width: 420px;
-    background-color: #d197dd;
+    background-color: #343A40;
     border-radius: 7px;
     padding: 30px 30px 35px;
     transition: all 0.2s ease;
@@ -19,7 +19,7 @@
     user-select: none;
     text-align: center;
     border-radius: 7px;
-    background: linear-gradient(90deg, rgba(209,151,218,1) 0%, rgba(173,37,226,1) 100%);
+    background: linear-gradient(90deg, rgba(1,1,1,1) 0%, rgba(52,58,64,1) 100%);
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
@@ -44,12 +44,12 @@ form img{
 }
 
 form .content i{
-    color: #dbdbdb;
+    color: #E1E8EB;
     font-size: 55px;
 }
 
 form .content p{
-    color: #dbdbdb;
+    color: #E1E8EB;
     margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
@@ -72,12 +72,12 @@ form .content p{
     height: 128px;
     outline: none;
     resize: none;
-    color: #fff;
+    color: #E1E8EB;
     font-size: 18px;
     background: none;
     border-radius: 5px;
     padding: 10px 15px;
-    border: 1px solid #fff;
+    border: 1px solid #E1E8EB;
 }
 
 textarea::-webkit-scrollbar{
@@ -93,7 +93,7 @@ textarea:hover::-webkit-scrollbar-track{
 }
 
 textarea:hover::-webkit-scrollbar-thumb{
-    background: #fff;
+    background: #E1E8EB;
     border-radius: 8px;
 }
 
@@ -111,9 +111,9 @@ textarea:hover::-webkit-scrollbar-thumb{
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
-    color: rgba(173,37,226,1);
+    background-color: #7952B3;
     border-radius: 5px;
-    background: #dbdbdb;
+    color: #E1E8EB;
     transition: transform 0.3s ease;
     width: calc(100% / 2 - 10px);
     display: flex;
@@ -126,11 +126,11 @@ i {
 
 .buttons button:hover{
     transform: scale(0.95);
-    background-color: rgb(127, 166, 178);
+    background-color: #5a27a7;
     color: #fff;
 }
 .buttons button:active {
-    background-color: rgb(127, 166, 178);
+    background-color: #5a27a7;
     color: #fff;
 }
 

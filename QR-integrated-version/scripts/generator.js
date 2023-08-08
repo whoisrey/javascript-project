@@ -2,27 +2,19 @@ const download = document.querySelector(".download");
 const qrContainer = document.querySelector("#qr-code");
 const qrText = document.querySelector(".qr-text");
 const shareBtn = document.querySelector(".share-btn");
-const sizes = document.querySelector(".sizes");
 
 qrText.addEventListener("input", handleQRText);
-sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
 
 // default QR Url
 const defaultUrl = "https://github.com/withLeche";
 let text = defaultUrl,
-  size = 300;
+  size = 200;
 
 // QR Text
 function handleQRText(e) {
   const value = e.target.value;
   text = value || defaultUrl;
-  generateQRCode();
-}
-
-// QR Size
-function handleSize(e) {
-  size = e.target.value;
   generateQRCode();
 }
 
@@ -32,8 +24,6 @@ async function generateQRCode() {
   console.log(defaultUrl);
   new QRCode("qr-code", {
     text,
-    height: size,
-    width: size,
   });
   download.href = await resolveDataUrl();
 }

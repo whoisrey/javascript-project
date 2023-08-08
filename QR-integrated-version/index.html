@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Generator|READER</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="generator.css">
+    <title>withQR</title>
+    <link rel="icon" type="image/png" href="./images/qr.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="reader.css">
-
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/generator.css">
+    <link rel="stylesheet" href="./styles/reader.css">
 </head>
-
 <body>
     <header>
     <nav id="tab-button-nav">
@@ -21,28 +20,21 @@
     </nav>
     </header>
     <main>
-        <br>
         <!-- QR Generator -->
         <section id="generator-section" class="tab-section">
             <section>
                 <div class="row">
-                    <select class="sizes">
-                        <option value="100">100×100</option>
-                        <option value="200">200×200</option>
-                        <option selected value="300">300×300</option>
-                        <option value="400">400×400</option>
-                    </select>
                 </div>
                 <input type="text" class="qr-text" placeholder="Enter QR Text">
                 <div id="qr-code"></div>
                 <div class="action-container">
                     <a href="#" class="download btn" download="QRCode">
                         <span>Download</span>
-                        <img src="./download.svg" alt="">
+                        <img src="./images/download.svg" alt="다운로드 버튼">
                     </a>
                     <button class="btn share-btn">
                         <span>Share</span>
-                        <img src="./share.svg" alt="">
+                        <img src="./images/share.svg" alt="공유 버튼">
                     </button>
                 </div>
             </section>
@@ -74,12 +66,9 @@
             </div>
         </section>
     </main>
-
-    <!-- 스크립트 순서 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="index.js"></script>
-    <script src="generator.js"></script>
-    <script src="reader.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/generator.js"></script>
+    <script src="./scripts/reader.js"></script>
 </body>
-
 </html>
