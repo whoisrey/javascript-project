@@ -111,7 +111,7 @@ textarea:hover::-webkit-scrollbar-thumb{
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
-    color: #d197dd;
+    color: rgba(173,37,226,1);
     border-radius: 5px;
     background: #dbdbdb;
     transition: transform 0.3s ease;

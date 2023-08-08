@@ -7,12 +7,17 @@ const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
 
+// HTTPS를 지원하는 QR 코드 리더 API를 사용하는 예시
+const qrCodeApiUrl = "https://api.qrserver.com/v1/read-qr-code/";
+
+// 이후 API 요청 및 처리 코드 작성
+
 // file과 formData 받는 함수
 // file : 업로드할 파일, formData : file을 포함한 다른 데이터를 담는 FormData객체
 function fetchRequest(file, formData) {
   infoText.innerText = "Scanning QR Code...";
   // QR 코드를 스캔하는 API에 POST 요청
-  fetch("http://api.qrserver.com/v1/read-qr-code/", {
+  fetch(qrCodeApiUrl, {
     method: "POST",
     body: formData,
   })
