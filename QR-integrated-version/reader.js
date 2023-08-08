@@ -36,6 +36,15 @@ function fetchRequest(file, formData) {
     });
 }
 
+// 업로드한 QR Code File을 API에 Request 요청을 진행하는 이벤트
+fileInp.addEventListener("change", async (e) => {
+  let file = e.target.files[0];
+  if (!file) return;
+  let formData = new FormData();
+  formData.append("file", file);
+  fetchRequest(file, formData);
+});
+
 // 클립보드에 텍스트를 복사
 copyBtn.addEventListener("click", () => {
   let text = document.querySelector("textarea").textContent;
