@@ -6,6 +6,7 @@ const fileInp = document.querySelector(".fileInp");
 const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
+const textArea = document.querySelector("textarea");
 
 // HTTPS를 지원하는 QR 코드 리더 API를 사용하는 예시
 const qrCodeApiUrl = "https://api.qrserver.com/v1/read-qr-code/";
@@ -77,15 +78,19 @@ closeBtn.addEventListener("click", (e) => {
 
 // Copy Button
 copyBtn.addEventListener("click", () => {
-  copyText(text);
+  if (textArea) {
+    const textToCopy = textArea.value;
+    copyText(textToCopy);
+  } else {
+    console.error("Textarea not found.");
+  }
 });
 
-// To copy textarea to Clipboard
+// To copy text to Clipboard
 function copyText(text) {
   const textarea = document.createElement("textarea");
-  console.log(text);
   textarea.value = text;
-  textarea.style.position = "fixed"; // 화면에서 감춤
+  textarea.style.position = "fixed";
   document.body.appendChild(textarea);
   textarea.select();
 
