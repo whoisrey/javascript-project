@@ -9,6 +9,7 @@ const copyBtn = document.querySelector(".copy");
 
 // HTTPS를 지원하는 QR 코드 리더 API를 사용하는 예시
 const qrCodeApiUrl = "https://api.qrserver.com/v1/read-qr-code/";
+// 브라우저는 보안상의 이유로 "혼합 콘텐츠"를 차단하며, HTTPS에서도 HTTPS리소스만 허용합니다.
 
 // 이후 API 요청 및 처리 코드 작성
 

@@ -16,27 +16,21 @@
 <body>
     <header>
     <nav id="tab-button-nav">
-      <button class="tab-button" data-tab-section="tab-section-1">QR Generator</button>
-      <button class="tab-button" data-tab-section="tab-section-2">QR Reader</button>
+      <button class="tab-button" data-tab-section="generator-section">QR Generator</button>
+      <button class="tab-button" data-tab-section="reader-section">QR Reader</button>
     </nav>
     </header>
     <main>
         <br>
         <!-- QR Generator -->
-        <section id="tab-section-1" class="tab-section">
+        <section id="generator-section" class="tab-section">
             <section>
                 <div class="row">
                     <select class="sizes">
                         <option value="100">100×100</option>
                         <option value="200">200×200</option>
-                        <option value="300">300×300</option>
-                        <option selected value="400">400×400</option>
-                        <option value="500">500×500</option>
-                        <option value="600">600×600</option>
-                        <option value="700">700×700</option>
-                        <option value="800">800×800</option>
-                        <option value="900">900×900</option>
-                        <option value="1000">1000×1000</option>
+                        <option selected value="300">300×300</option>
+                        <option value="400">400×400</option>
                     </select>
                 </div>
                 <input type="text" class="qr-text" placeholder="Enter QR Text">
@@ -54,7 +48,7 @@
             </section>
         </section>
         <!-- QR Reader -->
-        <section id="tab-section-2" class="tab-section" hidden>
+        <section id="reader-section" class="tab-section" hidden>
             <div class="wrapper">
                 <form action="#">
                     <input class="fileInp" type="file" hidden>
@@ -81,10 +75,11 @@
         </section>
     </main>
 
+    <!-- 스크립트 순서 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="index.js"></script>
     <script src="generator.js"></script>
     <script src="reader.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 
 </html>
