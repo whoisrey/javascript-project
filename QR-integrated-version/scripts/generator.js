@@ -6,7 +6,7 @@ const shareBtn = document.querySelector(".share-btn");
 qrText.addEventListener("input", handleQRText);
 shareBtn.addEventListener("click", handleShare);
 
-// default QR Url
+// default QR URL
 const defaultUrl = "https://github.com/withLeche";
 let text = defaultUrl,
   size = 200;
