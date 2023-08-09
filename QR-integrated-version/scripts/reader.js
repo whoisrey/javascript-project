@@ -1,16 +1,11 @@
 const wrapper = document.querySelector(".wrapper");
 const form = document.querySelector("form");
-// generator.js의 input값과 겹침
 const fileInp = document.querySelector(".fileInp");
-// const fileInp = document.querySelector("input");
 const infoText = document.querySelector("p");
 const closeBtn = document.querySelector(".close");
 const copyBtn = document.querySelector(".copy");
 const textArea = document.querySelector("textarea");
-
-// HTTPS를 지원하는 QR 코드 리더 API를 사용하는 예시
 const qrCodeApiUrl = "https://api.qrserver.com/v1/read-qr-code/";
-// 브라우저는 보안상의 이유로 "혼합 콘텐츠"를 차단하며, HTTPS에서도 HTTPS리소스만 허용합니다.
 
 // To fetch file, formData
 function fetchRequest(file, formData) {

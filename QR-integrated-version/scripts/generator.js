@@ -38,14 +38,13 @@ async function handleShare() {
         type: blob.type,
       });
       if (navigator.share) {
-        // navigator.share API를 지원하는 경우
+        // navigator.share API O
         await navigator.share({
           files: [file],
           title: text,
         });
       } else {
-        // navigator.share API를 지원하지 않는 경우
-        // 복사 및 붙여넣기 기능을 제공할 수 있습니다.
+        // navigator.share API X
         const dataUrl = await resolveDataUrl();
         copyToClipboard(dataUrl); // 복사 함수 호출
         alert("QR 코드 이미지가 복사되었습니다.");
