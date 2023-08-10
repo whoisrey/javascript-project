@@ -10,4 +10,5 @@ calculator: https://withleche.github.io/javascript-project/calculator <br>
 box-shadow-generator: https://withleche.github.io/javascript-project/shadow-generator <br>
 QR-generator: https://withleche.github.io/javascript-project/QR-generator <br>
 QR-reader: https://withleche.github.io/javascript-project/QR-reader <br>
-QR-integrated-version: https://withleche.github.io/javascript-project/QR-integrated-version
+QR-integrated-version: https://withleche.github.io/javascript-project/QR-integrated-version <br>
+weather-app: https://withleche.github.io/javascript-project/weather-app
