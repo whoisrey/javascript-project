@@ -16,7 +16,7 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       // API 응답에서 'cod' 필드는 숫자로 반환되기 때문에 '404' 를 404로 수정
-      if (json.cod === 404) {
+      if (json.cod === "404") {
         container.style.height = "400px";
         weatherBox.style.display = "none";
         weatherDetails.style.display = "none";
