@@ -135,9 +135,24 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchWeatherData(defaultLocation);
 });
 
+// Modal 구현
+const modal = document.getElementById("myModal");
+const modalSubmitButton = document.getElementById("modal-submit");
+const modalCloseButton = document.getElementsByClassName("close")[0];
+
 locButton.addEventListener("click", () => {
-  const location = prompt("Enter a location :");
+  modal.style.display = "block";
+});
+
+modalCloseButton.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+modalSubmitButton.addEventListener("click", () => {
+  const locationInput = document.getElementById("location");
+  const location = locationInput.value;
   if (!location) return;
 
   fetchWeatherData(location);
+  modal.style.display = "none";
 });
