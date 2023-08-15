@@ -131,7 +131,7 @@ function fetchWeatherData(location) {
 
 // Fetch weather data on document load for default location (Germany)
 document.addEventListener("DOMContentLoaded", () => {
-  const defaultLocation = "Paris";
+  const defaultLocation = "Seoul";
   fetchWeatherData(defaultLocation);
 });
 
