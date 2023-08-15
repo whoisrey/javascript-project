@@ -1,5 +1,6 @@
 const apiKey = "9c8d9d56472277a890db0748579c08fa";
 const locButton = document.querySelector(".loc-button");
+const leftInfo = document.querySelector(".left-info");
 const todayInfo = document.querySelector(".today-info");
 const todayWeatherIcon = document.querySelector(".today-weather i");
 const todayTemp = document.querySelector(".weather-temp");
@@ -37,7 +38,29 @@ function fetchWeatherData(location) {
       // 오늘 날씨 정보
       const todayWeather = data.list[0].weather[0].description;
       const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
+      const temperatureValue = parseInt(data.list[0].main.temp);
       const todayWeatherIconCode = data.list[0].weather[0].icon;
+
+      // 아이콘 및 기온 에 따라 이미지 배경 지정
+      if (temperatureValue >= 30) {
+        leftInfo.style.backgroundImage = 'url("./images/fire.jpg")';
+      } else if (temperatureValue < 0) {
+        leftInfo.style.backgroundImage = 'url("./images/ice.jpg")';
+      } else if (["01d", "02d"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/morning.jpg")';
+      } else if (["01n", "02n"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/night.jpg")';
+      } else if (["03d", "04n", "04d", "04n"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/cloud.jpg")';
+      } else if (["09d", "09n", "10d", "10n"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/rain.jpg")';
+      } else if (["11d", "11n"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/thunder.jpg")';
+      } else if (["13d", "13n"].includes(todayWeatherIconCode)) {
+        leftInfo.style.backgroundImage = 'url("./images/snow.jpg")';
+      } else {
+        leftInfo.style.backgroundImage = 'url("./images/default.jpg")';
+      }
 
       todayInfo.querySelector("h2").textContent = new Date().toLocaleDateString(
         "en",
@@ -52,7 +75,7 @@ function fetchWeatherData(location) {
       todayWeatherIcon.className = `bx bx-${weatherIconMap[todayWeatherIconCode]}`;
       todayTemp.textContent = todayTemperature;
 
-      // Update location and weather description in the "left-info" section
+      // left-info 정보
       const locationElement = document.querySelector(
         ".today-info > div > span"
       );
@@ -63,7 +86,7 @@ function fetchWeatherData(location) {
       );
       weatherDescriptionElement.textContent = todayWeather;
 
-      // Update todays info in the "day-info" section
+      // day-info 정보
       const todayPrecipitation = `${data.list[0].pop}%`;
       const todayHumidity = `${data.list[0].main.humidity}%`;
       const todayWindSpeed = `${data.list[0].wind.speed} km/h`;
