@@ -5,7 +5,7 @@ const todayWeatherIcon = document.querySelector(".today-weather i");
 const todayTemp = document.querySelector(".weather-temp");
 const daysList = document.querySelector(".days-list");
 
-// Mapping of weather condition codes to icon class names (Depending on Openweather Api Response)
+// 날씨 코드와 아이콘 이름 배정 (API)
 const weatherIconMap = {
   "01d": "sun",
   "01n": "moon",
@@ -28,14 +28,13 @@ const weatherIconMap = {
 };
 
 function fetchWeatherData(location) {
-  // Construct the API url with the location and api key
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
 
-  // Fetch weather data from api
+  // 날씨 데이터 API로 가져오기
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      // Update todays info
+      // 오늘 날씨 정보
       const todayWeather = data.list[0].weather[0].description;
       const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
       const todayWeatherIconCode = data.list[0].weather[0].icon;
@@ -87,7 +86,7 @@ function fetchWeatherData(location) {
 
         `;
 
-      // Update next 4 days weather
+      // 4일 간 날씨 안내
       const today = new Date();
       const nextDaysData = data.list.slice(1);
 
@@ -109,7 +108,6 @@ function fetchWeatherData(location) {
         ) {
           uniqueDays.add(dayAbbreviation);
           daysList.innerHTML += `
-                
                     <li>
                         <i class='bx bx-${weatherIconMap[iconCode]}'></i>
                         <span>${dayAbbreviation}</span>
@@ -120,7 +118,7 @@ function fetchWeatherData(location) {
           count++;
         }
 
-        // Stop after getting 4 distinct days
+        // 4일까지만 날씨가 나올 수 있게 멈춤
         if (count === 4) break;
       }
     })
@@ -129,26 +127,27 @@ function fetchWeatherData(location) {
     });
 }
 
-// Fetch weather data on document load for default location (Germany)
+// 기본 위치 설정 (서울)
 document.addEventListener("DOMContentLoaded", () => {
   const defaultLocation = "Seoul";
   fetchWeatherData(defaultLocation);
 });
 
-// Modal 구현
+// 모달 창 구현
 const modal = document.getElementById("myModal");
 const modalSubmitButton = document.getElementById("modal-submit");
 const modalCloseButton = document.getElementsByClassName("close")[0];
 
+// 위치 검색 버튼
 locButton.addEventListener("click", () => {
   modal.style.display = "block";
   modal.style.animation = "fadeIn 0.5s ease forwards"; // fadeIn 애니메이션 적용
 });
 
+// 닫기 버튼
 modalCloseButton.addEventListener("click", () => {
   modal.style.display = "none";
   modal.style.animation = "none"; // 애니메이션 초기화
-  modal.style.animation = "fadeOut 0.5s ease forwards"; // fadeOut 애니메이션 적용
 
   setTimeout(() => {
     modal.style.display = "none";
@@ -156,6 +155,7 @@ modalCloseButton.addEventListener("click", () => {
   }, 500); // 애니메이션 지속 시간과 동일한 시간으로 설정
 });
 
+// 위치 제출 버튼
 modalSubmitButton.addEventListener("click", () => {
   const locationInput = document.getElementById("location");
   const location = locationInput.value;
