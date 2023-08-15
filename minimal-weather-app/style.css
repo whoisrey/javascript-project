@@ -162,7 +162,8 @@ body{
     background: #1a237e;
 }
 
-/* 모달 창 */
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -175,7 +176,6 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     }
 
-/* 모달 contents */
 .modal-content {
     background-color: #232931;
     margin: 25% auto;
@@ -190,7 +190,6 @@ body{
     animation: fadeIn 0.5s ease forwards; /* fadeIn 애니메이션 적용 */
     }
 
-  /* @keyframes 규칙 정의 */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -241,17 +240,16 @@ body{
     background: #1a237e;
 }
 
-  /* 닫기 contents */
-  .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+    }
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+    }
