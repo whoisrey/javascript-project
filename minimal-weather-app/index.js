@@ -5,8 +5,6 @@ const todayInfo = document.querySelector(".today-info");
 const todayWeatherIcon = document.querySelector(".today-weather i");
 const todayTemp = document.querySelector(".weather-temp");
 const daysList = document.querySelector(".days-list");
-
-// 날씨 코드와 아이콘 이름 배정 (API)
 const weatherIconMap = {
   "01d": "sun",
   "01n": "moon",
@@ -35,7 +33,6 @@ function fetchWeatherData(location) {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      // 오늘 날씨 정보
       const todayWeather = data.list[0].weather[0].description;
       const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
       const temperatureValue = parseInt(data.list[0].main.temp);
@@ -80,20 +77,16 @@ function fetchWeatherData(location) {
         ".today-info > div > span"
       );
       locationElement.textContent = `${data.city.name}, ${data.city.country}`;
-
       const weatherDescriptionElement = document.querySelector(
         ".today-weather > h3"
       );
       weatherDescriptionElement.textContent = todayWeather;
-
       // day-info 정보
       const todayPrecipitation = `${data.list[0].pop}%`;
       const todayHumidity = `${data.list[0].main.humidity}%`;
       const todayWindSpeed = `${data.list[0].wind.speed} km/h`;
-
       const dayInfoContainer = document.querySelector(".day-info");
       dayInfoContainer.innerHTML = `
-
             <div>
                 <span class="title">PRECIPITATION</span>
                 <span class="value">${todayPrecipitation}</span>
@@ -106,13 +99,11 @@ function fetchWeatherData(location) {
                 <span class="title">WIND SPEED</span>
                 <span class="value">${todayWindSpeed}</span>
             </div>
-
         `;
 
       // 4일 간 날씨 안내
       const today = new Date();
       const nextDaysData = data.list.slice(1);
-
       const uniqueDays = new Set();
       let count = 0;
       daysList.innerHTML = "";
@@ -123,8 +114,6 @@ function fetchWeatherData(location) {
         });
         const dayTemp = `${Math.round(dayData.main.temp)}°C`;
         const iconCode = dayData.weather[0].icon;
-
-        // Ensure the day isn't duplicate and today
         if (
           !uniqueDays.has(dayAbbreviation) &&
           forecastDate.getDate() !== today.getDate()
@@ -141,7 +130,6 @@ function fetchWeatherData(location) {
           count++;
         }
 
-        // 4일까지만 날씨가 나올 수 있게 멈춤
         if (count === 4) break;
       }
     })
