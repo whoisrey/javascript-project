@@ -142,10 +142,18 @@ const modalCloseButton = document.getElementsByClassName("close")[0];
 
 locButton.addEventListener("click", () => {
   modal.style.display = "block";
+  modal.style.animation = "fadeIn 0.5s ease forwards"; // fadeIn 애니메이션 적용
 });
 
 modalCloseButton.addEventListener("click", () => {
   modal.style.display = "none";
+  modal.style.animation = "none"; // 애니메이션 초기화
+  modal.style.animation = "fadeOut 0.5s ease forwards"; // fadeOut 애니메이션 적용
+
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal.style.animation = "none"; // 애니메이션 초기화
+  }, 500); // 애니메이션 지속 시간과 동일한 시간으로 설정
 });
 
 modalSubmitButton.addEventListener("click", () => {
