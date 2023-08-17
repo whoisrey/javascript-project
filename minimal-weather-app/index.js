@@ -177,3 +177,12 @@ modalSubmitButton.addEventListener("click", () => {
   modal.style.display = "none";
   locationInput.value = "";
 });
+
+// rotate
+const flipper = document.querySelector(".flipper");
+flipper.addEventListener("click", () => {
+  flipper.style.transform =
+    flipper.style.transform === "rotateY(0deg)"
+      ? "rotateY(180deg)"
+      : "rotateY(0deg)";
+});
