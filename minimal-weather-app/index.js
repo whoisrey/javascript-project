@@ -26,6 +26,7 @@ const weatherIconMap = {
   "50n": "water",
 };
 const back = document.querySelector(".back");
+const flipper = document.querySelector(".flipper");
 
 function fetchWeatherData(location) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
@@ -221,10 +222,13 @@ modalSubmitButton.addEventListener("click", () => {
   fetchWeatherData(location);
   modal.style.display = "none";
   locationInput.value = "";
+
+  if (flipper.style.transform === "rotateY(180deg)") {
+    flipper.style.transform = "rotateY(0deg)";
+  }
 });
 
 // rotate
-const flipper = document.querySelector(".flipper");
 flipper.addEventListener("click", () => {
   flipper.style.transform =
     flipper.style.transform === "rotateY(0deg)"
