@@ -25,6 +25,7 @@ const weatherIconMap = {
   "50d": "water",
   "50n": "water",
 };
+const back = document.querySelector(".back");
 
 function fetchWeatherData(location) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
@@ -41,22 +42,66 @@ function fetchWeatherData(location) {
       // Background Image Changed By Weather
       if (temperatureValue >= 30) {
         leftInfo.style.backgroundImage = 'url("./images/fire.jpg")';
+        back.style.backgroundImage = 'url("./images/hot.jpeg")';
+        back.style.alignItems = "start";
+        back.innerHTML = `
+        <strong>시원한 나라로 이민 가자</strong>
+        `;
       } else if (temperatureValue < 0) {
         leftInfo.style.backgroundImage = 'url("./images/ice.jpg")';
+        back.style.backgroundImage = 'url("./images/cold.gif")';
+        back.style.alignItems = "start";
+        back.innerHTML = `
+        <strong>따뜻한 나라로 이민 가자</strong>
+        `;
       } else if (["01d", "02d"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/morning.jpg")';
+        back.style.backgroundImage = 'url("./images/walk.gif")';
+        back.style.alignItems = "start";
+        back.innerHTML = `
+        <strong>산책 갈까?</strong>
+        `;
       } else if (["01n", "02n"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/night.jpg")';
+        back.style.backgroundImage = 'url("./images/sleep.jpeg")';
+        back.innerHTML = `
+        <strong>자러 갈까?</strong>
+        `;
       } else if (["03d", "04n", "04d", "04n"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/cloud.jpg")';
+        back.style.backgroundImage = 'url("./images/cloudy.jpeg")';
+        back.style.alignItems = "end";
+        back.innerHTML = `
+        <strong>구름 낀 하늘은~</strong>
+        `;
       } else if (["09d", "09n", "10d", "10n"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/rain.jpg")';
+        back.style.backgroundImage = 'url("./images/rainy.jpeg")';
+        back.style.alignItems = "start";
+        back.innerHTML = `
+        <strong>이래야만 해?</strong>
+        `;
       } else if (["11d", "11n"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/thunder.jpg")';
+        back.style.backgroundImage = 'url("./images/scared.jpeg")';
+        back.style.alignItems = "start";
+        back.innerHTML = `
+        <strong>무셔</strong>
+        `;
       } else if (["13d", "13n"].includes(todayWeatherIconCode)) {
         leftInfo.style.backgroundImage = 'url("./images/snow.jpg")';
+        back.style.backgroundImage = 'url("./images/scared.jpeg")';
+        back.style.alignItems = "start";
+        back.style.color = "black";
+        back.innerHTML = `
+        <strong>나가 놀아야만 해~</strong>
+        `;
       } else {
         leftInfo.style.backgroundImage = 'url("./images/default.jpg")';
+        back.innerHTML = `
+        <div class="pic-gradient"></div>
+        <strong>Are You Okay?</strong>
+        `;
       }
 
       todayInfo.querySelector("h2").textContent = new Date().toLocaleDateString(
