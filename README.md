@@ -12,4 +12,6 @@ QR-generator: https://withleche.github.io/javascript-project/QR-generator <br>
 QR-reader: https://withleche.github.io/javascript-project/QR-reader <br>
 QR-integrated-version: https://withleche.github.io/javascript-project/QR-integrated-version <br>
 weather-app: https://withleche.github.io/javascript-project/weather-app <br>
-minimal-weather-app: https://withleche.github.io/javascript-project/minimal-weather-app
+minimal-weather-app: https://withleche.github.io/javascript-project/minimal-weather-app <br>
+portfolio-template: https://withleche.github.io/javascript-project/portfolio-template <br>
+particleJS: https://withleche.github.io/javascript-project/portfolio-template/particleJS <br>
