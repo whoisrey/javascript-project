@@ -82,3 +82,17 @@ scrollLinks.forEach((link) => {
   });
 });
 // calculate heights
+
+const sections = document.querySelectorAll("section");
+const animateElements = document.querySelectorAll(".animated");
+
+function animate() {
+  animateElements.forEach((element) => {
+    if (element.getBoundingClientRect().top < window.innerHeight * 0.75) {
+      element.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", animate);
+animate();

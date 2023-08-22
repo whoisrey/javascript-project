@@ -169,6 +169,30 @@ p {
   color: var(--clr-secondary);
 }
 /* section */
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+section:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.animated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section {
   padding-bottom: 5rem;
 }
