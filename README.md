@@ -15,3 +15,4 @@ weather-app: https://withleche.github.io/javascript-project/weather-app <br>
 minimal-weather-app: https://withleche.github.io/javascript-project/minimal-weather-app <br>
 portfolio-template: https://withleche.github.io/javascript-project/portfolio-template <br>
 particleJS: https://withleche.github.io/javascript-project/portfolio-template/particleJS <br>
+parallex-slider: https://withleche.github.io/javascript-project/portfolio-template/parallex-slider
