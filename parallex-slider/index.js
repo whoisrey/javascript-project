@@ -12,6 +12,8 @@ const options = {
     x3: 18,
   },
   groupCells: true,
+  autoPlay: 1000,
+  fullscreen: true,
 };
 
 // Function to set background position for slides
@@ -31,26 +33,42 @@ flkty.on("scroll", () => {
 });
 
 // Flickity autoplay control
-var playButton = document.querySelector(".play-button");
+const playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", function () {
   flkty.playPlayer();
 });
 
-var stopButton = document.querySelector(".stop-button");
+const stopButton = document.querySelector(".stop-button");
 stopButton.addEventListener("click", function () {
   flkty.stopPlayer();
 });
 
-// select cell
-var buttonGroup = document.querySelector(".button-group");
-var buttons = buttonGroup.querySelectorAll(".button");
-buttons = fizzyUIUtils.makeArray(buttons);
+// Resize
+const resizeButton = document.querySelector(".button--resize");
+resizeButton.addEventListener("click", function () {
+  carousel.classList.toggle("isexpanded");
+  flkty.resize();
+});
 
-buttonGroup.addEventListener("click", function (event) {
-  // filter for button clicks
-  if (!matchesSelector(event.target, ".button")) {
-    return;
+// Fullscreen
+// var viewFullscreenButton = document.querySelector(".view-fullscreen-button");
+// viewFullscreenButton.addEventListener("click", function () {
+//   flkty.viewFullscreen();
+// });
+
+// Fullscreen
+var viewFullscreenButton = document.querySelector(".view-fullscreen-button");
+viewFullscreenButton.addEventListener("click", function () {
+  if (carousel.requestFullscreen) {
+    carousel.requestFullscreen();
+  } else if (carousel.mozRequestFullScreen) {
+    // Firefox
+    carousel.mozRequestFullScreen();
+  } else if (carousel.webkitRequestFullscreen) {
+    // Chrome, Safari and Opera
+    carousel.webkitRequestFullscreen();
+  } else if (carousel.msRequestFullscreen) {
+    // IE/Edge
+    carousel.msRequestFullscreen();
   }
-  var index = buttons.indexOf(event.target);
-  flkty.selectCell(index);
 });
