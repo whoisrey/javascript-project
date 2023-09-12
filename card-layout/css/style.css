@@ -1,0 +1,353 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+/* hide sth */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+/* //hide sth */
+/* reset */
+h1,
+h2,
+h3,
+p,
+span,
+button,
+footer,
+ul {
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+/* //reset */
+/* background */
+.first-section {
+  background-color: seashell;
+}
+.second-section {
+  background-color: #673399;
+  color: #fff;
+}
+/* //background */
+
+/* aligned center */
+.l_wrapper {
+  max-width: 1080px;
+  margin: auto;
+  padding: 100px 0;
+}
+
+/* header */
+.first-header,
+.second-header {
+  display: flex;
+  margin-bottom: 100px;
+  transition: all 1s ease;
+}
+.first-header {
+  justify-content: space-between;
+}
+.second-header {
+  align-items: center;
+}
+
+.first-header h1,
+.second-header h1 {
+  font-size: 40px;
+}
+.first-header h1 {
+  /* flex-basis: calc((100% - 48px) / 3); */
+  flex-basis: 344px;
+  color: salmon;
+}
+.second-header h1 {
+  flex-basis: 26%;
+  flex-shrink: 0;
+  font-weight: lighter;
+}
+
+.second-header strong {
+  box-shadow: inset 0 -20px 0 orangered;
+}
+
+/* 기본 텍스트 스타일 */
+.first-header strong {
+  position: relative;
+  font-weight: normal;
+}
+
+/* hover 상태일 때의 밑줄 스타일 */
+.first-header strong::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px; /* 밑줄 높이 조절 가능 */
+  box-shadow: inset 0 -20px 40px #fff;
+  transform-origin: right;
+  transform: scaleX(0); /* 초기에는 화면에 표시하지 않음 */
+  transition: transform 0.3s ease; /* 변화 애니메이션 설정 */
+}
+
+/* hover 상태에서 밑줄 활성화 */
+.first-header strong:hover::before {
+  transform-origin: left;
+  transform: scaleX(1); /* 밑줄 활성화 (확대) */
+}
+
+.first-header button {
+  padding: 15px 20px;
+  margin: 24px 0;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: orangered;
+  box-shadow: 0 3px 0 #ac3a1a;
+}
+
+/* hover effects for button */
+.first-header button:hover {
+  box-shadow: 0 0 10px red;
+}
+
+.second-header p::before {
+  content: " ";
+  width: 80px;
+  height: 2px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  background-color: #bd8fe8;
+}
+.second-header p {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #bd8fe8;
+}
+/* //header */
+/* contents */
+.first-contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.first-card,
+.second-card {
+  display: flex;
+  background-color: #fff;
+  transition: all 1s ease;
+}
+.first-card {
+  flex-direction: column;
+  box-shadow: 0 0 6px #ccc;
+}
+.second-card {
+  margin-bottom: 24px;
+  color: #222;
+}
+
+/* hover effects for first-card */
+.first-card:hover {
+  box-shadow: 0 0 100px #aaa;
+}
+.second-card:hover {
+  box-shadow: 0 0 100px #bd8fe8;
+}
+
+.second-card:last-child {
+  margin-bottom: 0;
+}
+.second-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.first-card-cover,
+.second-card-cover {
+  position: relative;
+}
+.second-card-cover {
+  flex-basis: 26%;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 10px darkorange;
+}
+.first-card-image,
+.second-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+.first-card-image {
+  border-bottom: 4px solid black;
+}
+.second-card-cover h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  color: #fff;
+  background-color: rgb(0 0 0 / 0.4);
+  font-size: 30px;
+}
+.first-card-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  transition: all 1s ease;
+}
+.first-card-contents {
+  padding: 24px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.second-card-contents {
+  min-width: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 24px;
+}
+.first-card-keywords span {
+  font-size: 12px;
+  padding: 5px;
+  color: #673399;
+  background-color: #f1e0f8;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* hover effects for keywords */
+.first-card-keywords span:hover {
+  box-shadow: 0 0 10px #aaa;
+}
+
+.first-card-contents-text {
+  margin-top: 24px;
+}
+.first-card-contents-text h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.first-card-contents-text p {
+  padding-bottom: 24px;
+  font-size: 14px;
+  margin-top: 32px;
+  color: #a5a5a4;
+}
+.second-card-contents h3 {
+  margin-bottom: 32px;
+  color: #673399;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* //card-contents */
+/* contents */
+/* something for both cards (such as footer, list, and whatever) */
+.card-followers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 68px;
+  padding-right: 24px;
+  margin-left: 24px;
+  border-top: 3px solid #eeeeee;
+}
+.card-followers button {
+  color: #a5a5a4;
+  font-size: 12px;
+  font-weight: 700;
+}
+.card-followers img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+/* hover effects for followers */
+.card-followers img:hover {
+  box-shadow: 0 0 10px #aaa;
+}
+
+.card-followers-first,
+.card-followers-second {
+  margin-right: -18px;
+}
+.card-lists ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-lists li {
+  text-indent: -20px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+.card-lists li + li {
+  margin-top: 22px;
+}
+.card-lists li::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: #bd8fe8;
+  border-radius: 50%;
+}
+/* //something for both cards (such as footer, list, and whatever) */
+
+/* reponsive web design */
+@media (max-width: 900px) {
+  .first-header,
+  .second-header,
+  .first-card,
+  .second-card {
+    border-radius: 10px;
+    margin: 24px;
+  }
+  .first-contents {
+    display: flex;
+    flex-direction: column;
+  }
+  .second-card {
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .first-header,
+  .second-header {
+    display: block;
+  }
+  .second-header h1 {
+    margin-bottom: 24px;
+  }
+  .second-header p::before {
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+}
+/* //reponsive web design */
