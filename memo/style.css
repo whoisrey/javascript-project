@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  background-color: #bab6b5;
+  font-family: "Bruno Ace SC", cursive;
+}
+
+div {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+main {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #53535f;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #aaa;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0b1d19;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+button:last-child {
+  background-color: #720d47;
+}
+
+button:hover {
+  box-shadow: 0 0 10px black;
+}
