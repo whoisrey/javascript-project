@@ -1,0 +1,47 @@
+:root {
+  --main-bgColor: teal;
+}
+
+h1,
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  border: 20px double black;
+  border-radius: 15px;
+  background: linear-gradient(10deg, #bbb, white);
+  box-shadow: 0 0 10px black;
+}
+
+.picker,
+.name {
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 24px;
+  color: black;
+}
+
+.marble {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(76deg, yellow, var(--main-bgColor));
+  box-shadow: 0 0 10px var(--main-bgColor);
+}
+
+.hands {
+  font-size: 72px;
+}
