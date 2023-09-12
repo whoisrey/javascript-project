@@ -1,0 +1,240 @@
+/* reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+}
+button {
+  border: none;
+  background-color: transparent;
+  font: inherit;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 692px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 24px;
+  text-align: center;
+  width: 650px;
+  padding-bottom: 37px;
+  border-bottom: 2px solid #bdbdbd;
+  margin: auto;
+}
+/* nav::before {
+  content: "";
+  display: inline-block;
+  width: 650px;
+  height: 2px;
+  background-color: #bdbdbd;
+} */
+
+.cinema-nav ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.cinema-nav button {
+  padding: 10px 20px;
+  color: #828282;
+}
+
+.cinema-nav button.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* button:hover {
+  font-weight: bold;
+  color: black;
+} */
+
+/* article */
+.cinema-card {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.cinema-contents {
+  padding: 19px 20px 18px;
+}
+
+.cinema-contents img {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  /* 이미지 비율 맞춰 넣기 */
+  aspect-ratio: 180 / 250;
+  width: 100%;
+  object-fit: cover;
+}
+.cinema-title {
+  font-size: 16px;
+  margin: 12px 0;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cinema-info {
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.cinema-info li :first-child {
+  color: #828282;
+  margin-right: 5px;
+}
+.cinema-info .star {
+  background: url(/img/icon-star.svg) no-repeat 0 0 / 1em;
+  padding-left: 1.3em;
+}
+.tit + .ellipsis {
+  float: right;
+  width: 150px;
+}
+
+.button-group {
+  border-top: 1px solid #bdbdbd;
+  display: flex;
+}
+.button-group a,
+.button-group button {
+  background: #f2f2f2;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.button-group a {
+  border-right: 1px solid #bdbdbd;
+  border-radius: 0 0 0 10px;
+}
+.button-group a:focus {
+  z-index: 1;
+}
+.button-group button {
+  border-radius: 0 0 10px 0;
+}
+
+.button-group button::before {
+  content: "";
+  /* 배경이미지를 content에 넣어도 되지만 섬세한 사이즈 조절 불가 */
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background: url(/img/icon-play.svg) no-repeat 0 50% / 1em;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 24px 23px;
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 28px;
+  background: #fff;
+}
+.wrap {
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  background: #f2f2f2;
+  padding: 40px 30px 30px;
+  width: 1060px;
+  margin: 86px auto 135px;
+}
+
+.cinema-footer {
+  padding: 53px 266px 38px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.cinema-footer .a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 78px;
+}
+.cinema-footer .a h2 {
+  font-size: 22px;
+}
+
+.cinema-footer .a::after {
+  content: "";
+  transform: translate(-50%, -50%);
+  width: 1189px;
+  height: 2px;
+  background-color: #c4c4c4;
+  position: absolute;
+  top: 119px;
+  left: 50%;
+}
+.cinema-footer .a ul {
+  display: flex;
+  gap: 30px;
+}
+
+.cinema-footer .b {
+  display: flex;
+  flex-direction: row;
+}
+.cinema-footer .b {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.cinema-footer .b ul {
+  display: flex;
+}
+.cinema-footer .b li:not(:first-child) {
+  padding-left: 5px;
+}
+.cinema-footer .b p {
+  font-weight: bold;
+}
