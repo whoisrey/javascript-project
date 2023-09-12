@@ -27,6 +27,7 @@ our-frineds (side-bar): https://withleche.github.io/javascript-project/our-frien
 emoji: https://withleche.github.io/javascript-project/emoji <br>
 timer: https://withleche.github.io/javascript-project/timer <br>
 
+card-layout: https://withleche.github.io/javascript-project/card-layout <br>
 secret-diary: https://withleche.github.io/javascript-project/secret-diary <br>
 cinema-list: https://withleche.github.io/javascript-project/cinema-list <br>
 vending-machine: https://withleche.github.io/javascript-project/vending-machine <br>
