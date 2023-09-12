@@ -15,4 +15,18 @@ weather-app: https://withleche.github.io/javascript-project/weather-app <br>
 minimal-weather-app: https://withleche.github.io/javascript-project/minimal-weather-app <br>
 portfolio-template: https://withleche.github.io/javascript-project/portfolio-template <br>
 particleJS: https://withleche.github.io/javascript-project/portfolio-template/particleJS <br>
-parallex-slider: https://withleche.github.io/javascript-project/parallex-slider
+parallex-slider: https://withleche.github.io/javascript-project/parallex-slider <br>
+magic-marble: https://withleche.github.io/javascript-project/magic-marble <br>
+html-calendar: https://withleche.github.io/javascript-project/html-calendar <br>
+carousel: https://withleche.github.io/javascript-project/carousel <br>
+memo: https://withleche.github.io/javascript-project/memo <br>
+color-flipper: https://withleche.github.io/javascript-project/color-flipper <br>
+random-counter: https://withleche.github.io/javascript-project/random-counter <br>
+our-friends (navigation-bar): https://withleche.github.io/javascript-project/our-friends/navbar <br>
+our-frineds (side-bar): https://withleche.github.io/javascript-project/our-friends/sidebar <br>
+emoji: https://withleche.github.io/javascript-project/emoji <br>
+timer: https://withleche.github.io/javascript-project/timer <br>
+
+secret-diary: https://withleche.github.io/javascript-project/secret-diary <br>
+cinema-list: https://withleche.github.io/javascript-project/cinema-list <br>
+vending-machine: https://withleche.github.io/javascript-project/vending-machine <br>
