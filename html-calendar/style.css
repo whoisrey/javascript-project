@@ -1,0 +1,46 @@
+#calendar {
+  display: inline-block;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 0 10px #bbb;
+}
+#calendar table {
+  border-collapse: collapse;
+}
+caption {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+  margin: 10px;
+}
+
+th,
+td {
+  padding: 20px;
+  border-bottom: 1px solid #bbb;
+}
+
+th:first-child,
+td:first-child {
+  color: red;
+}
+
+th:last-child,
+td:last-child {
+  color: blue;
+}
+tr:first-child {
+  border-bottom: 3px solid #bbb;
+}
+
+.prev,
+.next {
+  color: inherit;
+  padding: 10px;
+  margin: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ddd;
+}
