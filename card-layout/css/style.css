@@ -48,6 +48,10 @@ button {
 }
 /* //background */
 
+#calendar-container {
+  display: none;
+}
+
 /* aligned center */
 .l_wrapper {
   max-width: 1080px;
