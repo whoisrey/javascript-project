@@ -105,7 +105,7 @@ nextButton.addEventListener("click", nextMonth);
 function hideCalendar() {
   calendarContainer.style.display = "none";
   calendarButton.innerHTML = "+ Add to Calendar";
-
+  firstHeader.style.marginBottom = "100px";
   const divWrapper = firstHeader.querySelector("div");
   if (divWrapper) {
     firstHeader.innerHTML = ""; // firstHeader 내용 초기화
@@ -118,7 +118,7 @@ function hideCalendar() {
 function showCalendar() {
   calendarButton.innerHTML = "+ Hide to Calendar";
   calendarContainer.style.display = "block";
-
+  firstHeader.style.margin = "0";
   const divWrapper = document.createElement("div");
   divWrapper.appendChild(firstTitle);
   divWrapper.appendChild(calendarButton);
@@ -126,7 +126,6 @@ function showCalendar() {
   firstHeader.appendChild(divWrapper);
   firstHeader.appendChild(calendarContainer);
   firstHeader.style.alignItems = "center";
-  firstHeader.style.marginBottom = "0";
 }
 
 // 초기에는 달력을 숨깁니다.
