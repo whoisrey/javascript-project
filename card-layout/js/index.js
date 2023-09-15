@@ -1,12 +1,16 @@
 // 달력을 조작할 때 사용할 변수들을 설정합니다.
 const calendarContainer = document.getElementById("calendar-container");
-const yearElement = calendarContainer.querySelector(".year");
-const monthElement = calendarContainer.querySelector(".month");
-const prevButton = calendarContainer.querySelector(".prev");
-const nextButton = calendarContainer.querySelector(".next");
-const table = calendarContainer.querySelector("table");
+const yearElement = document.querySelector(".year");
+const monthElement = document.querySelector(".month");
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
+const table = document.querySelector("table");
 
 const addBtn = document.getElementById("calendar");
+const caption = document.querySelector("caption");
+const time = document.querySelector("time");
+
+const article = document.querySelector("article");
 
 // 초기 날짜 설정
 let currentDate = new Date();
@@ -18,9 +22,9 @@ function drawCalendar(year, month) {
   // 먼저 테이블 내용을 지웁니다.
   table.innerHTML = "";
 
-  // 년도와 월을 업데이트합니다.
+  // 연도와 월을 업데이트합니다.
   yearElement.textContent = year;
-  monthElement.textContent = month + 1; // JavaScript의 월은 0부터 시작하므로 1을 더해줍니다.
+  monthElement.textContent = month + 1;
 
   // 캘린더 헤더를 생성합니다.
   const headerRow = document.createElement("tr");
