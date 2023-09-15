@@ -5,11 +5,11 @@ const monthElement = document.querySelector(".month");
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 const table = document.querySelector("table");
-
-const addBtn = document.getElementById("calendar");
+const firstHeader = document.querySelector(".first-header");
+const firstTitle = document.getElementById("first-title");
+const calendarButton = document.getElementById("calendar");
 const caption = document.querySelector("caption");
 const time = document.querySelector("time");
-
 const article = document.querySelector("article");
 
 // 초기 날짜 설정
@@ -104,20 +104,36 @@ nextButton.addEventListener("click", nextMonth);
 // 달력을 숨기는 함수
 function hideCalendar() {
   calendarContainer.style.display = "none";
-  addBtn.innerHTML = "+ Add to Calendar";
+  calendarButton.innerHTML = "+ Add to Calendar";
+
+  const divWrapper = firstHeader.querySelector("div");
+  if (divWrapper) {
+    firstHeader.innerHTML = ""; // firstHeader 내용 초기화
+    firstHeader.appendChild(firstTitle);
+    firstHeader.appendChild(calendarButton);
+  }
 }
 
 // 달력을 표시하는 함수
 function showCalendar() {
+  calendarButton.innerHTML = "+ Hide to Calendar";
   calendarContainer.style.display = "block";
-  addBtn.innerHTML = "+ Hide to Calendar";
+
+  const divWrapper = document.createElement("div");
+  divWrapper.appendChild(firstTitle);
+  divWrapper.appendChild(calendarButton);
+  firstHeader.innerHTML = ""; // firstHeader 내용 초기화
+  firstHeader.appendChild(divWrapper);
+  firstHeader.appendChild(calendarContainer);
+  firstHeader.style.alignItems = "center";
+  firstHeader.style.marginBottom = "0";
 }
 
 // 초기에는 달력을 숨깁니다.
 hideCalendar();
 
 // 버튼 클릭 이벤트를 처리하는 함수
-addBtn.addEventListener("click", function () {
+calendarButton.addEventListener("click", function () {
   if (
     calendarContainer.style.display === "none" ||
     calendarContainer.style.display === ""
@@ -127,6 +143,3 @@ addBtn.addEventListener("click", function () {
     hideCalendar();
   }
 });
-
-// 달력을 초기화하고 표시하는 로직은 여기에 추가하세요.
-// (위에서 설명한 달력 생성 및 조작 함수를 사용할 수 있습니다.)
