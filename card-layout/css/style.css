@@ -366,7 +366,7 @@ button {
   background-color: rgba(0,0,0,0.7); /* 배경 어두운 효과 */
 }
 
-.modal .first-card {
+.first-card-modal {
   display: none;
 }
 
