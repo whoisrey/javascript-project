@@ -1,16 +1,13 @@
 // 달력을 조작할 때 사용할 변수들을 설정합니다.
+const firstHeader = document.querySelector(".first-header");
+const firstTitle = document.getElementById("first-title");
+const calendarButton = document.getElementById("calendar-button");
 const calendarContainer = document.getElementById("calendar-container");
 const yearElement = document.querySelector(".year");
 const monthElement = document.querySelector(".month");
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 const table = document.querySelector("table");
-const firstHeader = document.querySelector(".first-header");
-const firstTitle = document.getElementById("first-title");
-const calendarButton = document.getElementById("calendar");
-const caption = document.querySelector("caption");
-const time = document.querySelector("time");
-const article = document.querySelector("article");
 
 // 초기 날짜 설정
 let currentDate = new Date();
