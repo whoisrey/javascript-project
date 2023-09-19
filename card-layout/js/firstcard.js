@@ -26,5 +26,8 @@ thirdCard.addEventListener("click", function () {
 window.addEventListener("click", function (event) {
   if (event.target === modal) {
     modal.style.display = "none";
+    firstCardFirst.style.display = "none";
+    firstCardSecond.style.display = "none";
+    firstCardThird.style.display = "none";
   }
 });
