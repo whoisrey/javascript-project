@@ -31,3 +31,32 @@ window.addEventListener("click", function (event) {
     firstCardThird.style.display = "none";
   }
 });
+
+// 모달을 열 때 배경 스크롤을 막음
+function disableBackgroundScroll() {
+  document.body.style.overflow = "hidden";
+}
+
+// 모달을 닫을 때 배경 스크롤을 다시 활성화
+function enableBackgroundScroll() {
+  document.body.style.overflow = "auto";
+}
+
+// 모달 외부를 클릭하면 모달을 닫음
+function closeModal() {
+  modal.style.display = "none";
+  firstCardFirst.style.display = "none";
+  firstCardSecond.style.display = "none";
+  firstCardThird.style.display = "none";
+  enableBackgroundScroll(); // 배경 스크롤 다시 활성화
+}
+
+// 모달 외부 클릭 이벤트 처리 (터치 이벤트 포함)
+function handleModalClick(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
+modal.addEventListener("click", handleModalClick);
+modal.addEventListener("touchstart", handleModalClick);
