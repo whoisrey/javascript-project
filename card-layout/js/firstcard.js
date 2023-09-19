@@ -7,6 +7,7 @@ const firstCardFirst = document.querySelector(".first-card-first");
 const firstCardSecond = document.querySelector(".first-card-second");
 const firstCardThird = document.querySelector(".first-card-third");
 
+// click
 firstCard.addEventListener("click", function () {
   modal.style.display = "block";
   firstCardFirst.style.display = "block";
@@ -32,6 +33,7 @@ window.addEventListener("click", function (event) {
   }
 });
 
+// touch screen
 // 모달을 열 때 배경 스크롤을 막음
 function disableBackgroundScroll() {
   document.body.style.overflow = "hidden";
