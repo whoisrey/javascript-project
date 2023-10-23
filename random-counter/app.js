@@ -21,7 +21,7 @@ btns.forEach(function (btn) {
       count++;
     } else {
       count = 0;
-      alert("리셋 어쩌구 저쩌구");
+      alert("complete!");
     }
     if (count > 0) {
       value.style.color = "white";
