@@ -28,6 +28,7 @@ while (parseInt(guess) !== targetNum) {
 }
 let giveUp = document.getElementById("giveUp");
 let answer = document.getElementById("answer");
+
 if (guess.toLowerCase() === "q") {
   giveUp.style.display = "block";
   console.log("안녕히 가세요.");
