@@ -26,7 +26,7 @@ our-friends (navigation-bar): https://withleche.github.io/javascript-project/our
 our-frineds (side-bar): https://withleche.github.io/javascript-project/our-friends/sidebar <br>
 emoji: https://withleche.github.io/javascript-project/emoji <br>
 timer: https://withleche.github.io/javascript-project/timer <br>
-guessing-game: https://withleche.github.io/javascript-project/timer <br>
+guessing-game: https://withleche.github.io/javascript-project/guessing-game <br>
 
 card-layout: https://withleche.github.io/javascript-project/card-layout <br>
 secret-diary: https://withleche.github.io/javascript-project/secret-diary <br>
