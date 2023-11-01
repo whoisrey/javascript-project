@@ -26,9 +26,12 @@ while (parseInt(guess) !== targetNum) {
     );
   }
 }
-
+let giveUp = document.getElementById("giveUp");
+let answer = document.getElementById("answer");
 if (guess.toLowerCase() === "q") {
+  giveUp.style.display = "block";
   console.log("안녕히 가세요.");
 } else {
+  answer.style.display = "block";
   console.log(`${attempts}번째 만에 정답입니다.`);
 }
