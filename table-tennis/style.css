@@ -29,6 +29,16 @@ span {
   border-right: 4px solid #ddd;
   padding-left: 0.5rem;
 }
+
+#leftBtn {
+
+}
+
+#rightBtn {
+  
+}
+
+
 .winner {
   color: green;
 }
