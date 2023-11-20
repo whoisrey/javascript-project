@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    transition: background-color 1s;
+  }
+</style>
+<body>
+
+  <script>
+    const colorChange = (color, delay) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          document.body.style.backgroundColor = color;
+          resolve()
+        }, delay)
+      })
+    }
+
+    async function rainbow(){
+      await colorChange('red', 1000)
+      await colorChange('orange', 1000)
+      await colorChange('yellow', 1000)
+      await colorChange('green', 1000)
+      await colorChange('blue', 1000)
+      await colorChange('navy', 1000)
+      await colorChange('purple', 1000)
+    }
+    rainbow()
+    // colorChange('red', 1000)
+    // .then(() => colorChange('orange', 1000))
+    // .then(() => colorChange('yellow', 1000))
+    // .then(() => colorChange('green', 1000))
+    // .then(() => colorChange('blue', 1000))
+    // .then(() => colorChange('navy', 1000))
+    // .then(() => colorChange('purple', 1000))
+
+
+    // const login = async (username, password) => {
+    //   if(!username || !password) throw 'Missing'
+    //   if(username === 'whois' && password === 'leche') return 'Welcome'
+    //   throw `I don't know`
+    // }
+
+    // login().then(msg => {
+    //   console.log('Congrat!')
+    //   console.log(msg)
+    // })
+    // .catch((err) => {
+    //   console.log('ERROR!')
+    //   console.log(err)
+    // })
+
+
+  </script>
+</body>
+</html>
