@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <h1>Color</h1>
+  <button id="Btn">Click Me</button>
+  <script>
+    const colorBtn = document.getElementById("Btn")
+
+    
+    const randomColor = () => {
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      const newColor = `rgb(${r}, ${g}, ${b})`
+      document.body.style.backgroundColor = newColor;
+    }
+    
+    colorBtn.addEventListener('click', randomColor)
+  </script>
+</body>
+</html>
