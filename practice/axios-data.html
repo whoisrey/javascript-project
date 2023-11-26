@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <button>click!</button>
+  <ul></ul>
+  <script>
+    const clickBtn = document.querySelector('button')
+    const listContainer = document.querySelector('ul')
+
+    const makeJoke = async () => {
+      const config = { headers: {Accept: 'application/json'}}
+      const res = await axios.get('https://icanhazdadjoke.com/', config)
+      const joke = res.data.joke
+      const list = document.createElement('li')
+      listContainer.append(list)
+      list.textContent = joke
+    }
+
+    clickBtn.addEventListener('click', makeJoke)
+  </script>
+</body>
+</html>
