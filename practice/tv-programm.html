@@ -6,37 +6,42 @@
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <title>Document</title>
 </head>
+<style>
+  .custom {
+    box-shadow: 0 0 10px black;
+    margin: 10px;
+  }
+</style>
 <body>
-  <form>
-    <input type="text" name="query">
-    <button>submit</button>
+  <form id="searchContainer">
+    <input type="text" id="searchInput" name="query">
+    <button id="submitButton">submit</button>
   </form>
 
   <script>
-    const form = document.querySelector('form')
-    const input = document.querySelector('input')
-    const button = document.querySelector('button')
+    const searchCnt = document.getElementById('searchContainer')
+    const searchIpt = document.getElementById('searchInput')
+    const submitBtn = document.getElementById('submitButton')
 
-    form.addEventListener('submit', async function(e){
+    searchCnt.addEventListener('submit', async (e) => {
       e.preventDefault()
-      const terms = form.elements.query.value
-      const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${terms}`)
-      // const shows = res.data
-      makeImage(res.data)
-      })
-      
-      const makeImage = (shows) => {
-        
-        for(let result of shows){
-          if(result.show.image){
-          const image = document.createElement('img')
-          image.src = result.show.image.medium
-          document.body.append(image)
-          }
+      const searchTerm = searchIpt.value
+      const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
+      const searchResult = res.data
+      makeImage(searchResult)
+    })
+
+    const makeImage = (shows) => {
+      for(let result of shows){
+        if(result.show.image){
+          const newImage = document.createElement('img')
+          const mediumImage = result.show.image.medium
+          newImage.src = mediumImage
+          newImage.classList.add('custom')
+          document.body.append(newImage)
         }
       }
-
-
+    }
   </script>
 </body>
 </html>
