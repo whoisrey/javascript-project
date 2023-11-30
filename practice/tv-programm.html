@@ -11,6 +11,10 @@
     box-shadow: 0 0 10px black;
     margin: 10px;
   }
+
+  .break {
+    display: none;
+  }
 </style>
 <body>
   <form id="searchContainer">
@@ -28,8 +32,10 @@
       const searchTerm = searchIpt.value
       const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
       const searchResult = res.data
+      removeImage()
       makeImage(searchResult)
     })
+
 
     const makeImage = (shows) => {
       for(let result of shows){
@@ -42,6 +48,14 @@
         }
       }
     }
+
+    const removeImage = () => {
+      const customImages = document.querySelectorAll('.custom')
+      // forEach 함수 추가
+      customImages.forEach(image => image.remove())
+    }
+
+
   </script>
 </body>
 </html>
