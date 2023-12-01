@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Leche</h1>
+  <script>
+    class Pet {
+      constructor(name, age){
+        this.name = name;
+        this.age = age;
+      }
+      hello(){
+        return `Hello ${this.name}~, you are ${this.age} years old.`
+      }
+    }
+
+    class Cat extends Pet{
+      meow(){
+        for(let i = 0; i < `${this.age}`; i++){
+          console.log('meow')
+        }
+      }
+    }
+
+    class Dog extends Pet{
+        wow(){
+          return `I am a Dog, ${this.name}`
+        }
+      
+    }
+  </script>
+</body>
+</html>
