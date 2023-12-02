@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Color Change</h1>
+  <script>
+    class Color{
+      constructor(r, g, b){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+      }
+      innerRGB(){
+        return `${this.r}, ${this.g}, ${this.b}`
+      }
+      rgb(){
+        return `rgb(${this.innerRGB()})`
+      }
+      rgba(a = 1.0){
+        return `rgba(${this.innerRGB()}, ${a})`
+      }
+    }
+
+    const header = document.querySelector('h1')
+  
+    header.addEventListener('click', function(){
+      const r = Math.floor(Math.random() * 255)
+      const g = Math.floor(Math.random() * 255)
+      const b = Math.floor(Math.random() * 255)
+      const color2 = new Color (r, g, b)
+
+      document.body.style.backgroundColor = color2.rgb()
+    })
+  </script>
+</body>
+</html>
