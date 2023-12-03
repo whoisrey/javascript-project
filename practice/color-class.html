@@ -7,8 +7,12 @@
 </head>
 <body>
   <h1>Color Change</h1>
+  <button>change</button>
   <script>
-    class Color{
+    const header = document.querySelector('h1')
+    const button = document.querySelector('button')
+
+    class Color {
       constructor(r, g, b){
         this.r = r;
         this.g = g;
@@ -20,20 +24,15 @@
       rgb(){
         return `rgb(${this.innerRGB()})`
       }
-      rgba(a = 1.0){
-        return `rgba(${this.innerRGB()}, ${a})`
-      }
     }
 
-    const header = document.querySelector('h1')
-  
-    header.addEventListener('click', function(){
+
+    button.addEventListener('click', function(){
       const r = Math.floor(Math.random() * 255)
       const g = Math.floor(Math.random() * 255)
       const b = Math.floor(Math.random() * 255)
-      const color2 = new Color (r, g, b)
-
-      document.body.style.backgroundColor = color2.rgb()
+      const color1 = new Color (r, g, b)
+      document.body.style.backgroundColor = color1.rgb()
     })
   </script>
 </body>
