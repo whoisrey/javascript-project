@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Wow</h1>
+  <script>
+    const header = document.querySelector('h1')
+
+    // function Color(r, g, b) {
+    //   this.r = r
+    //   this.g = g
+    //   this.b = b
+    // }
+
+    // Color.prototype.rgb = function(){
+    //   const {r, g, b} = this;
+    //   return `rgb(${r}, ${g}, ${b})`
+    // }
+
+    // Color.prototype.rgba = function(a = 1.0){
+    //   const {r, g, b} = this
+    //   return `rgb(${r}, ${g}, ${b}, ${a})`
+
+    // }
+
+    class Color {
+      constructor(r, g, b){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+      }
+      rgb(){
+        const {r, g, b} = this
+        return `rgb(${r}, ${g}, ${b})`
+      }
+      rgba(a = 1){
+        const {r, g, b} = this
+        return `rgb(${r}, ${g}, ${b}, ${a})`
+      }
+    }
+
+    const color1 = new Color(255, 255, 100)
+  </script>
+</body>
+</html>
