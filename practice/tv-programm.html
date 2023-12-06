@@ -32,6 +32,7 @@
       const searchTerm = searchIpt.value
       const res = await axios.get(`https://api.tvmaze.com/search/shows?q=${searchTerm}`)
       const searchResult = res.data
+      // 순서도 중요!
       removeImage()
       makeImage(searchResult)
     })
@@ -52,7 +53,10 @@
     const removeImage = () => {
       const customImages = document.querySelectorAll('.custom')
       // forEach 함수 추가
-      customImages.forEach(image => image.remove())
+      for(let value of customImages){
+        value.remove()
+      }
+      // customImages.forEach(v => v.remove())
     }
 
 
