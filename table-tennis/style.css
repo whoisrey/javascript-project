@@ -15,13 +15,13 @@ body{
   text-align: center;
 }
 
-h1 {
-  width: 100%;
+img {
+  width: 400px;
+  border-radius: 25px;;
 }
 
-span {
-  /* width: 50%;
-  height: 100%; */
+h1 {
+  width: 100%;
 }
 
 #leftScore::after {
@@ -29,20 +29,23 @@ span {
   border-right: 4px solid #ddd;
   padding-left: 0.5rem;
 }
-
-#leftBtn {
-
-}
-
-#rightBtn {
-  
-}
-
-
 .winner {
   color: green;
 }
 
 .loser {
   color: red;
+}
+
+/* buttons */
+
+.buttons {
+
+}
+
+
+/* controllers */
+
+.controllers {
+  margin-top: 20px;
 }
