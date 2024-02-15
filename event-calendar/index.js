@@ -35,3 +35,9 @@ function showAddTaskModal() {
 function closeAddTaskModal() {
   document.getElementById("add-task-modal").style.display = "none";
 }
+
+function deleteTask(taskElement) {
+  if (confirm("이 작업을 삭제하시겠습니까?")) {
+    taskElement.parentNode.removeChild(taskElement);
+  }
+}
