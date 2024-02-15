@@ -39,10 +39,6 @@ body{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.add-task-btn:hover{
-  background-color: #424242;
-}
-
 .calendar-day{
   display: flex;
   flex-direction: column;
@@ -69,7 +65,68 @@ body{
   transition: all 0.3s ease;
 }
 
-.task:hover{
+.task:hover,
+.modal-content button:hover,
+.add-task-btn:hover{
   background-color: #424242;
 }
 
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content{
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.close{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close:hover,
+.close:focus{
+  color: #000;
+}
+
+input[type="date"],
+input[type="text"]{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.modal-content button{
+  background-color: #212121;
+  color: #fff;
+  padding: 10px 48px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
