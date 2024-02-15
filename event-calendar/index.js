@@ -27,3 +27,11 @@ function generateCalendar() {
     calendar.appendChild(daySquare);
   }
 }
+
+function showAddTaskModal() {
+  document.getElementById("add-task-modal").style.display = "block";
+}
+
+function closeAddTaskModal() {
+  document.getElementById("add-task-modal").style.display = "none";
+}
