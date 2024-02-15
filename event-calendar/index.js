@@ -41,3 +41,10 @@ function deleteTask(taskElement) {
     taskElement.parentNode.removeChild(taskElement);
   }
 }
+
+function editTask(taskElement) {
+  const newTaskDesc = prompt("편집할 작업:", taskElement.textContent);
+  if ((newTaskDesc !== null) & (newTaskDesc.trim() !== "")) {
+    taskElement.textContent = newTaskDesc;
+  }
+}
