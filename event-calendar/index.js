@@ -29,11 +29,11 @@ function generateCalendar() {
 }
 
 function showAddTaskModal() {
-  document.getElementById("add-task-modal").style.display = "block";
+  document.getElementById("addTaskModal").style.display = "block";
 }
 
 function closeAddTaskModal() {
-  document.getElementById("add-task-modal").style.display = "none";
+  document.getElementById("addTaskModal").style.display = "none";
 }
 
 function deleteTask(taskElement) {
