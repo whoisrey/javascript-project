@@ -48,3 +48,35 @@ function editTask(taskElement) {
     taskElement.textContent = newTaskDesc;
   }
 }
+
+function addTask() {
+  const taskDate = new Date(document.getElementById("task-date").value);
+  const taskDesc = document.getElementById("task-desc").value.trim();
+
+  if (taskDesc && !isNaN(taskDate.getDate())) {
+    const calendarDays = document.getElementById("calendar").children;
+    for (let i = 0; i < calendarDays.length; i++) {
+      const day = calendarDays[i];
+      if (parseInt(day.textContent) === taskDate.getDate()) {
+        const taskElement = document.createElement("div");
+        taskElement.className = "task";
+        taskElement.textContent = taskDesc;
+
+        taskElement.addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+          deleteTask(taskElement);
+        });
+
+        taskElement.addEventListener("click", function () {
+          editTask(taskElement);
+        });
+
+        day.appendChild(taskElement);
+        break;
+      }
+    }
+    closeAddTaskModal();
+  } else {
+    alert("유효한 날짜와 작업을 입력해주세요.");
+  }
+}
