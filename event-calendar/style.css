@@ -42,3 +42,34 @@ body{
 .add-task-btn:hover{
   background-color: #424242;
 }
+
+.calendar-day{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  color: #c4c4c4;
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+.task{
+  background-color: #212121;
+  color: #fff;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 4px;
+  text-align: center;
+  word-break: break-word;
+  font-size: 0.8em;
+  width: 88%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task:hover{
+  background-color: #424242;
+}
+
