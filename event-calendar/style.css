@@ -17,6 +17,34 @@ body{
   padding-bottom: 60px;
 }
 
+.calendar-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.calendar-title button{
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+}
+
+.calendar-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #a4a3a3;
+}
+
+.calendar-year{
+  color: #898888;
+  font-size: 26px;
+}
+
 .calendar-grid{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
