@@ -1,18 +1,37 @@
 window.onload = function () {
-  generateCalendar();
-};
-
-function generateCalendar() {
-  const calendar = document.getElementById("calendar");
   const currentDate = new Date();
   const month = currentDate.getMonth();
   const year = currentDate.getFullYear();
 
+  generateCalendar(month, year);
+};
+
+function generateCalendar(month, year) {
+  const calendar = document.getElementById("calendar");
   const firstDayOfMonth = new Date(year, month, 1);
   const lastDayOfMonth = new Date(year, month + 1, 0);
 
   const firstDayOfWeek = firstDayOfMonth.getDay();
   const totalDays = lastDayOfMonth.getDate();
+  const monthContainer = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Nov",
+    "Dec",
+  ];
+
+  const yearSquare = document.querySelector(".calendar-year");
+  yearSquare.textContent = year;
+
+  const monthSquare = document.querySelector(".calendar-month");
+  monthSquare.textContent = monthContainer[month];
 
   for (let i = 0; i < firstDayOfWeek; i++) {
     let blankDay = document.createElement("div");
