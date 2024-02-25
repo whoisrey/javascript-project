@@ -16,8 +16,8 @@ body{
 }
 
 .wrapper{
-  min-width: 65vw;
-  min-height: 70vh;
+  width: 65vmin;
+  height: 70vmin;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -65,5 +65,5 @@ body{
   color: #b8c6dc;
   width: calc(100% / 4);
   cursor: pointer;
-  border-right: 1px solid #171b26;
+  border-right: 1px solid #171b26
 }
