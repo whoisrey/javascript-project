@@ -1,10 +1,23 @@
-window.onload = function () {
-  const currentDate = new Date();
-  const month = currentDate.getMonth();
-  const year = currentDate.getFullYear();
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
+const currentDate = new Date();
+let month = currentDate.getMonth();
+let year = currentDate.getFullYear();
+
+window.onload = function () {
   generateCalendar(month, year);
 };
+
+prevBtn.addEventListener("click", () => {
+  month--;
+  generateCalendar(month, year);
+});
+
+nextBtn.addEventListener("click", () => {
+  month++;
+  generateCalendar(month, year);
+});
 
 function generateCalendar(month, year) {
   const calendar = document.getElementById("calendar");
