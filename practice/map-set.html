@@ -7,6 +7,14 @@
 </head>
 <body>
   <script>
+    // 키로 객체를 허용한다.
+    let leche = { name: 'leche' };
+
+    let eatsCountMap = new Map();
+
+    eatsCountMap.set(leche, 123)
+    console.log(eatsCountMap.get(leche)) // 123
+
     let set = new Set();
 
     let a = {name: 'a'}
