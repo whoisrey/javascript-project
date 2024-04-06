@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let options = {
+      size: {
+        width: 100,
+        height: 200
+      },
+      items: ["Cake", "Donut"],
+      extra: true
+    };
+
+    // 코드를 여러 줄에 걸쳐 작성해 의도하는 바를 명확히 드러냄
+    let {
+      size: { // size는 여기,
+        width,
+        height
+      },
+      items: [item1, item2], // items는 여기에 할당함
+      title = "Menu" // 분해하려는 객체에 title 프로퍼티가 없으므로 기본값을 사용함
+    } = options;
+
+    alert(title);  // Menu
+    alert(width);  // 100
+    alert(height); // 200
+    alert(item1);  // Cake
+    alert(item2);  // Donut
+  </script>
+</body>
+</html>
