@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(x, y) {
+      const sum = x + y;
+  
+    try {
+      if (sum === 3) {
+      console.log("try가 실행됐다!")
+      return "sum is 3";
+      }
+    } finally {
+      console.log("finally가 실행됐다!")
+    }
+  }
+    
+
+    const fooResult = foo(1, 2);
+  
+    console.log(fooResult);
+  </script>
+</body>
+</html>
