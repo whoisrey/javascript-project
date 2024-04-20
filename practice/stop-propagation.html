@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>form
+    <div>div
+      <p>p</p>
+    </div>
+  </form>
+  <script>
+    const form = document.querySelector('form')
+    const div = document.querySelector('div')
+    const p = document.querySelector('p')
+
+    form.addEventListener('click', () => {
+      // alert('form')
+    })
+    div.addEventListener('click', (e) => {
+      // e.stopPropagation()
+      console.log(e.target)
+      console.log(e.currentTarget)
+      // alert('div')
+    })
+    p.addEventListener('click', () => {
+      // alert('p')
+    })
+  </script>
+</body>
+</html>

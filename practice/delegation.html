@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.my-list {
+  width: 200px;
+  height: 500px;
+  overflow: auto;
+  border: 1px solid black;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  background-color: teal;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+  background: lightgray;
+  margin-bottom: 1px;
+  font-family: cursive;
+}
+
+</style>
+<body>
+  <div class="container">
+    <ul class="my-list">
+    </ul>
+    <button>Add Item</button>
+  </div>
+  <script>
+    const myList = document.querySelector(".my-list");
+
+    const lists = document.querySelectorAll('li')
+    
+    const button = document.querySelector('button')
+    
+    button.addEventListener('click', addItem)
+    button.removeEventListener('click', addItem)
+    function addItem() {
+      const length = document.querySelectorAll("li").length;
+      const myList = document.querySelector(".my-list");
+      let newNode = document.createElement("li");
+      newNode.innerText = "new item " + length;
+      myList.appendChild(newNode);
+    }
+    
+    myList.addEventListener("click", removeItem);
+    function removeItem(e) {
+      console.log(e.target)
+      console.log(e.currentTarget)
+      e.target.matches("li") ? e.target.parentNode.removeChild(e.target) : null;
+    }
+
+
+  </script>
+</body>
+</html>
