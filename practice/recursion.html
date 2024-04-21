@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const pow = (x, n) => {
+      let result = 1;
+      for(let i = 0; i < n; i++){
+        result *= x
+      }
+      return result
+    }
+
+    const recursionPow = (x, n) => {
+      if(n === 1){
+        return x;
+      } else {
+        return x * recursionPow(x, n - 1)
+      }
+    }
+  </script>
+</body>
+</html>
