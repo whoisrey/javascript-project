@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="input-debounce"> debounce callback: <span id="disp-debounce"></span>
+  <hr>
+  <h4>마우스 움직임 이벤트</h4>
+  <p>throttle 미적용: <span id="disp-not-throttle"></span></p>
+  <p>throttle 적용: <span id="disp-throttle"></span></p>
+  <script>
+ function debounce(callback, limit = 100) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      callback.apply(this, args);
+    }, limit);
+  };
+}
+
+function throttle(callback, limit = 100) {
+  let waiting = false;
+  return function () {
+    if (!waiting) {
+      callback.apply(this, arguments);
+      waiting = true;
+      setTimeout(() => {
+        waiting = false;
+      }, limit);
+    }
+  };
+}
+
+// 이벤트 할당
+
+let debounceCount = 0,
+  mouseMoveCount = 0,
+  mouseThrottleCount = 0;
+
+const inputDebounce = document.getElementById("input-debounce"),
+  dispDebounce = document.getElementById("disp-debounce"),
+  dispNotThrottle = document.getElementById("disp-not-throttle"),
+  dispThrottle = document.getElementById("disp-throttle");
+
+inputDebounce.addEventListener(
+  "keyup",
+  debounce(function () {
+    dispDebounce.textContent = ++debounceCount;
+  }, 100)
+);
+
+window.addEventListener("mousemove", () => {
+  dispNotThrottle.textContent = ++mouseMoveCount;
+});
+
+window.addEventListener(
+  "mousemove",
+  throttle(() => {
+    dispThrottle.textContent = ++mouseThrottleCount;
+  }, 500)
+);
+
+  </script>
+</body>
+</html>
