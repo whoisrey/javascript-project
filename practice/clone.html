@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const user = {
+      name: 'Lee',
+      hobby: {
+        hobby1: 'football',
+        hobby2: 'watch-movie'
+      }
+    }
+
+    const userClone = Object.assign({}, user)
+    const userClone2 = { ...user }
+    const userClone3 = JSON.parse(JSON.stringify(user))
+  </script>
+</body>
+</html>
