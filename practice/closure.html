@@ -7,23 +7,36 @@
 </head>
 <body>
   <script>
-    function makeCounter(){
-      let num = 0;
-      return function(){
-        return num++
-      }
-    }
+    // function makeCounter(){
+    //   let num = 0;
+    //   return function(){
+    //     return num++
+    //   }
+    // }
     
-    const counter = makeCounter()
+    // const counter = makeCounter()
 
-    const sum = () => {
-      const a = 1;
-      return function (b) {
-        return a + b
+    // const sum = () => {
+    //   const a = 1;
+    //   return function (b) {
+    //     return a + b
+    //   }
+    // }
+
+    // const wow = sum()
+
+    function a (){
+      const b = 12;
+      return {
+        c: function (arg){
+          console.log(arg + b);
+        }
       }
     }
 
-    const wow = sum()
+    const d = a();
+    
+    d.c(12)
   </script>
 </body>
 </html>
