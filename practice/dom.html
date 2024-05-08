@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="user">user1</div>
+    <div class="user">user2</div>
+    <div class="user">user3</div>
+    <div class="user">user4</div>
+    <div class="user">user5</div>
+  </div>
+  <script>
+    const container = document.querySelector('.container')
+    const queryUsers = document.querySelectorAll('.user');
+    const getUsers = document.getElementsByClassName('user');
+
+    const newDiv = document.createElement('div');
+    newDiv.innerText = 'user6';
+    container.append(newDiv);
+    newDiv.classList.add('user')
+
+    console.log(queryUsers.length);
+    console.log(getUsers.length);
+  </script>
+</body>
+</html>
