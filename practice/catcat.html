@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="" alt="">
+  <script>
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      "x-api-key": "live_9HqhVVWrfZNdATvhb88XPDjMkUHcVPdb83chBUheunu1hRUR83y9easBvGI5GKCo"
+    });
+
+    const requestOptions = {
+      method: 'GET',
+      headers: headers,
+      redirect: 'follow'
+    };
+
+    const img = document.querySelector('img')
+    fetch("https://api.thecatapi.com/v1/images/search?limit=10", requestOptions).then(response => response.text()).then(result => {
+      const data = JSON.parse(result);
+      for(const i of data){
+        const createImg = document.createElement('img')
+        document.body.append(createImg)
+        createImg.src = i.url
+        createImg.style.display = 'block'
+      }
+    }).catch(error => console.log('error', error));
+
+//     async function fetchCatImages() {
+//   const headers = new Headers({
+//     "Content-Type": "application/json",
+//     "x-api-key": "live_9HqhVVWrfZNdATvhb88XPDjMkUHcVPdb83chBUheunu1hRUR83y9easBvGI5GKCo"
+//   });
+
+//   const requestOptions = {
+//     method: 'GET',
+//     headers: headers,
+//     redirect: 'follow'
+//   };
+
+//   try {
+//     const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10", requestOptions);
+//     const result = await response.json();
+    
+//     for (const i of result) {
+//       const createImg = document.createElement('img');
+//       document.body.append(createImg);
+//       createImg.src = i.url;
+//       createImg.style.display = 'block';
+//     }
+//   } catch (error) {
+//     console.error('error', error);
+//   }
+// }
+
+// fetchCatImages();
+  </script>
+</body>
+</html>
