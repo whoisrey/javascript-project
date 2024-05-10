@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #app {
+  height: 100vh;
+  width: 100vw;
+  perspective: 1600px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.list-item {
+  position: fixed;
+  width: 240px;
+  height: 400px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: 0.3s;
+}
+
+.list-item li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  list-style: none;
+  backface-visibility: hidden;
+}
+</style>
+<body>
+  <article id="app">
+    <h2>Dog Carousel</h2>
+    <ul class="list-item">
+    </ul>
+  </article>
+  <script>
+    async function fetchImg () {
+      const headers = new Headers({
+        "Content-Type": "application/json",
+        "x-api-key": "live_eu6XnVhWSpHKMPtWimp2JUloqpKKaebhoAhZZQuZbzW8sLrjxxvrNya8DUs0B4An"
+      });
+
+      const requestOptions = {
+        method: 'GET',
+        headers: headers,
+        redirect: 'follow'
+      };
+
+      const img = document.querySelector('img')
+      const listItem = document.querySelector('.list-item')
+
+try {
+  const response =  await fetch("https://api.thedogapi.com/v1/images/search?limit=10", requestOptions)
+  const result = await response.json()
+  const items = [];
+    for (const i of result) {
+      const list = document.createElement('li');
+      items.push(list);
+      const createImg = document.createElement('img');
+      listItem.append(list);
+      list.append(createImg);
+      list.style.display = "flex";
+      list.style.border = "none";
+      createImg.src = i.url;
+      createImg.style.width = "100%";
+      createImg.style.alignItems = "center";
+      createImg.style.borderRadius = "25px";
+      const radius = (items[0].offsetWidth * items.length) / 3.14 / 2;
+      items.forEach((item, index) => {
+        item.style.transform = `rotateY(${
+    (360 / items.length) * index
+  }deg) translateZ(${radius}px)`;
+      })
+
+      const angle = 360 / items.length;
+      let currAngle = 0;
+
+  document.addEventListener("click", function (event) {
+  // 화면 오른쪽을 눌렀을 경우
+  if (window.innerWidth / 2 < event.clientX) {
+    currAngle += angle;
+
+    // 화면 왼쪽을 눌렀을 경우
+  } else {
+    currAngle -= angle;
+  }
+  listItem.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+});
+    }
+
+} catch (error) {
+    console.error('error', error);
+  }
+}
+    fetchImg()
+
+  </script>
+</body>
+</html>
