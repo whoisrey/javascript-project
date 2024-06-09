@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img>
+    <p></p>
+  </div>
+  <script>
+    const headers = new Headers({
+      "Content-Type": "application/json",
+      "x-api-key": "live_9HqhVVWrfZNdATvhb88XPDjMkUHcVPdb83chBUheunu1hRUR83y9easBvGI5GKCo"
+    });
+
+    const requestOptions = {
+      method: 'GET',
+      headers: headers,
+      redirect: 'follow'
+    };
+
+    const img = document.querySelector('img');
+    const p = document.querySelector('p');
+
+fetch("https://api.thecatapi.com/v1/images/search?limit=1", requestOptions)
+  .then(response => response.text())
+  .then(result => {
+    const results = JSON.parse(result)
+    console.log(results)
+    img.src = results[0].url
+  })
+  .catch(error => console.log('error', error));
+  </script>
+</body>
+</html>
