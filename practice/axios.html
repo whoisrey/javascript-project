@@ -8,10 +8,6 @@
 </head>
 <body>
   <script>
-    // axios.get("https://swapi.dev/api/people/1/").then((res) => {
-    //   console.log(res.name)
-    // })
-
     const starWars = async (id) => {
       const data = await axios.get(`https://swapi.dev/api/people/${id}/`);
       console.log(data.data)
