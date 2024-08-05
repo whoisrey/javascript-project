@@ -19,7 +19,7 @@ Car.prototype.run = function () {
 };
 
 const c1 = new Car("현대");
-const c2 = new Car("기아");
+// const c2 = new Car("기아");
 
 c1.run(); // "안녕하세요 현대차 시동걸까요?"
 c2.run(); // "안녕하세요 기아차 시동걸까요?"
