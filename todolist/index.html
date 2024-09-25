@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Todo list</h1>
-  <ul>
-    <li>"new" - Add A Todo</li>
-    <li>"list" - List All Todos</li>
-    <li>"delete" - Remove Specific Todo</li>
-    <li>"quit" - Quit App</li>
-  </ul>
-  <script>
-    const todo = [];
-    let input = prompt('명령어를 입력하시오.')
-    while (input !== 'quit' && input !== 'q') {
-      if (input === 'list') {
-        console.log('***********')
-        for (let i = 0; i < todo.length; i++) {
-          console.log(`${i} : ${todo[i]}`)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Todo list</h1>
+    <ul>
+      <li>"new" - Add A Todo</li>
+      <li>"list" - List All Todos</li>
+      <li>"delete" - Remove Specific Todo</li>
+      <li>"quit" - Quit App</li>
+    </ul>
+    <script>
+      const todo = [];
+      let input = prompt("명령어를 입력하시오.");
+      while (input !== "quit" && input !== "q") {
+        if (input === "list") {
+          console.log("***********");
+          for (let i = 0; i < todo.length; i++) {
+            console.log(`${i} : ${todo[i]}`);
+          }
+          console.log("***********");
+        } else if (input === "new") {
+          let add = prompt("추가할 작업을 입력하시오.");
+          todo.push(add);
+          console.log(`${add}를 추가했습니다.`);
+        } else if (input === "delete") {
+          let index = prompt("삭제할 작업의 순서를 입력하시오.");
+          let deleted = todo.splice(index, 1);
+          console.log(`${index}번째 작업을 삭제했습니다.`);
         }
-        console.log('***********')
-      } else if (input === 'new') {
-        let add = prompt('추가할 작업을 입력하시오.')
-        todo.push(add)
-        console.log(`${add}를 추가했습니다.`)
-      } else if (input === 'delete') {
-        let index = prompt('삭제할 작업의 순서를 입력하시오.')
-        let deleted = todo.splice(index, 1)
-        console.log(`${index}번째 작업을 삭제했습니다.`)
+        input = prompt("명령어를 입력하시오.");
       }
-      input = prompt('명령어를 입력하시오.')
-    }
-    console.log('프로그램을 종료하겠습니다.')
-  </script>
-</body>
+      console.log("프로그램을 종료하겠습니다.");
+    </script>
+  </body>
 </html>
