@@ -2,14 +2,6 @@ const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4");
 
-// 현재 날짜에서 (10일 후의 날짜와 시간)
-// let tempDate = new Date();
-// let tempYear = tempDate.getFullYear();
-// let tempMonth = tempDate.getMonth();
-// let tempDay = tempDate.getDate();
-// const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
-
-// 특정 날짜로 부터의 D-Day
 let futureDate = new Date(2023, 5, 30, 6, 10, 0);
 
 const year = futureDate.getFullYear();
