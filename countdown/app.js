@@ -24,32 +24,23 @@ const weekday = weekdays[futureDate.getDay()];
 
 giveaway.textContent = `생각하고 싶지 않은  ${year}년 ${month}월 ${date} 일, ${weekday} 오후 ${hours}시 ${minutes}분`;
 
-// 미래 시간 값 밀리초로 반환
 const futureTime = futureDate.getTime();
 console.log(futureTime);
 
 function getRemainingTime() {
   const today = new Date().getTime();
   const t = futureTime - today;
-  // 밀리초
-  // 1s = 1000ms
-  // 1m = 60s
-  // 1hr = 60min
-  // 1d = 24hr
 
-  // 밀리초 값
   const oneDay = 24 * 60 * 60 * 1000;
   const oneHour = 60 * 60 * 1000;
   const oneMinute = 60 * 1000;
 
-  // 일, 시, 분, 초 계산식
   let days = t / oneDay;
   days = Math.floor(days);
   let hours = Math.floor((t % oneDay) / oneHour);
   let minutes = Math.floor((t % oneHour) / oneMinute);
   let seconds = Math.floor((t % oneMinute) / 1000);
 
-  // 일, 시, 분, 초 배열
   const values = [days, hours, minutes, seconds];
 
   function format(item) {
@@ -59,7 +50,6 @@ function getRemainingTime() {
     return item;
   }
 
-  // 카운트다운 설정 시간이 완료되었을 때 메시지 나오게 하는
   items.forEach(function (item, index) {
     item.innerHTML = format(values[index]);
   });
@@ -68,11 +58,10 @@ function getRemainingTime() {
     deadline.innerHTML = `<h4 class="expired">...</h4>`;
   }
 }
-// 1초씩 getRemainingTime 함수 실행
+
 let countdown = setInterval(getRemainingTime, 1000);
 getRemainingTime();
 
-// 이미지가 1초마다 바뀌게 실행하는 함수
 const images = ["A.jpg", "B.jpg", "C.jpg", "D.jpg", "E.jpg", "F.jpg", "G.jpg"];
 let currentIndex = 0;
 const imageElement = document.getElementById("characters");
@@ -82,11 +71,9 @@ function changeImage() {
   currentIndex = (currentIndex + 1) % images.length;
   console.log(currentIndex);
 }
-// currentIndex는 무한히 늘어나지 않는다.
 
 setInterval(changeImage, 1000);
 
-// 마우스오버 text가 바뀌는 이벤트 추가
 const title = document.querySelector("h3");
 const text = document.querySelector("p");
 const img = document.querySelector("img");
