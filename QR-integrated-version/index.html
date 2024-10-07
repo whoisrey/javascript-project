@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>withQR</title>
-    <link rel="icon" type="image/png" href="./images/qr.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/generator.css">
-    <link rel="stylesheet" href="./styles/reader.css">
-</head>
-<body>
+    <link rel="icon" type="image/png" href="./images/qr.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/generator.css" />
+    <link rel="stylesheet" href="./styles/reader.css" />
+  </head>
+  <body>
     <header>
-    <nav id="tab-button-nav">
-        <button class="tab-button" data-tab-section="generator-section">QR Generator</button>
-        <button class="tab-button" data-tab-section="reader-section">QR Reader</button>
-    </nav>
+      <nav id="tab-button-nav">
+        <button class="tab-button" data-tab-section="generator-section">
+          QR Generator
+        </button>
+        <button class="tab-button" data-tab-section="reader-section">
+          QR Reader
+        </button>
+      </nav>
     </header>
     <main>
-        <!-- QR Generator -->
-        <section id="generator-section" class="tab-section">
-            <section>
-                <div class="row">
-                </div>
-                <input type="text" class="qr-text" placeholder="Enter QR Text">
-                <div id="qr-code"></div>
-                <div class="action-container">
-                    <a href="#" class="download btn" download="QRCode">
-                        <span>Download</span>
-                        <img src="./images/download.svg" alt="다운로드 버튼">
-                    </a>
-                    <button class="btn share-btn">
-                        <span>Share</span>
-                        <img src="./images/share.svg" alt="공유 버튼">
-                    </button>
-                </div>
-            </section>
+      <section id="generator-section" class="tab-section">
+        <section>
+          <div class="row"></div>
+          <input type="text" class="qr-text" placeholder="Enter QR Text" />
+          <div id="qr-code"></div>
+          <div class="action-container">
+            <a href="#" class="download btn" download="QRCode">
+              <span>Download</span>
+              <img src="./images/download.svg" alt="다운로드 버튼" />
+            </a>
+            <button class="btn share-btn">
+              <span>Share</span>
+              <img src="./images/share.svg" alt="공유 버튼" />
+            </button>
+          </div>
         </section>
-        <!-- QR Reader -->
-        <section id="reader-section" class="tab-section" hidden>
-            <div class="wrapper">
-                <form action="#">
-                    <input class="fileInp" type="file" hidden>
-                    <img src="#" alt="">
-                    <div class="content">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <p>Upload QR Code To Read</p>
-                    </div>
-                </form>
-                <div class="details">
-                    <textarea spellcheck="false" disabled></textarea>
-                    <div class="buttons">
-                        <button class="close">
-                            Close
-                            <i class="fa-solid fa-close"></i>
-                        </button>
-                        <button class="copy">
-                            Copy Text
-                            <i class="fa-solid fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
+      </section>
+      <section id="reader-section" class="tab-section" hidden>
+        <div class="wrapper">
+          <form action="#">
+            <input class="fileInp" type="file" hidden />
+            <img src="#" alt="" />
+            <div class="content">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <p>Upload QR Code To Read</p>
             </div>
-        </section>
+          </form>
+          <div class="details">
+            <textarea spellcheck="false" disabled></textarea>
+            <div class="buttons">
+              <button class="close">
+                Close
+                <i class="fa-solid fa-close"></i>
+              </button>
+              <button class="copy">
+                Copy Text
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/generator.js"></script>
     <script src="./scripts/reader.js"></script>
-</body>
+  </body>
 </html>
