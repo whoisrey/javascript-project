@@ -6,19 +6,16 @@ const shareBtn = document.querySelector(".share-btn");
 qrText.addEventListener("input", handleQRText);
 shareBtn.addEventListener("click", handleShare);
 
-// default QR URL
 const defaultUrl = "https://github.com/withLeche";
 let text = defaultUrl,
   size = 200;
 
-// QR Text
 function handleQRText(e) {
   const value = e.target.value;
   text = value || defaultUrl;
   generateQRCode();
 }
 
-// QR Code
 async function generateQRCode() {
   qrContainer.innerHTML = "";
   console.log(defaultUrl);
@@ -28,7 +25,6 @@ async function generateQRCode() {
   download.href = await resolveDataUrl();
 }
 
-// QR Code Share
 async function handleShare() {
   setTimeout(async () => {
     try {
@@ -38,13 +34,11 @@ async function handleShare() {
         type: blob.type,
       });
       if (navigator.share) {
-        // navigator.share API O
         await navigator.share({
           files: [file],
           title: text,
         });
       } else {
-        // navigator.share API X
         const dataUrl = await resolveDataUrl();
         copyToClipboard(dataUrl); // 복사 함수 호출
         alert("QR 코드 이미지가 복사되었습니다.");
@@ -56,7 +50,6 @@ async function handleShare() {
   }, 100);
 }
 
-// QR Code Image -> Data URL
 function resolveDataUrl() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
