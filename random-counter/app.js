@@ -1,7 +1,5 @@
-// 초기값 설정
 let count = 0;
 
-// 작동하는 모든 요소의 변수 선언
 const value = document.querySelector("#value");
 const title = document.querySelector(".title");
 const btns = document.querySelectorAll(".btn");
