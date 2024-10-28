@@ -3,12 +3,10 @@ const preview = document.getElementById("preview"),
   ranges = document.querySelectorAll(".settings input"),
   copyButton = document.getElementById("copy-styles");
 
-// input 이벤트 리스너
 ranges.forEach((slider) => {
   slider.addEventListener("input", generateStyles);
 });
 
-// 스타일 함수
 function generateStyles() {
   const xShadow = document.getElementById("x-shadow").value;
   const yShadow = document.getElementById("y-shadow").value;
@@ -19,7 +17,6 @@ function generateStyles() {
   const shadowInset = document.getElementById("inset-shadow").checked;
   const borderRadius = document.getElementById("border-r").value;
 
-  // Box Shadow 값 생성
   const boxShadow = `${
     shadowInset ? "inset " : ""
   } ${xShadow}px ${yShadow}px ${blurRadius}px ${spreadRadius}px ${hexToRgba(
@@ -27,14 +24,10 @@ function generateStyles() {
     shadowOpacity
   )}`;
 
-  // preview 스타일 업데이트
   preview.style.boxShadow = boxShadow;
   preview.style.borderRadius = `${borderRadius}px`;
 
-  // textarea 스타일 업데이트
   styles.textContent = `box-shadow: ${boxShadow}; \nborder-radius: ${borderRadius}px;`;
-
-  // background-color 관련 코드
 
   const backgroundColor = document.getElementById("background-color").value;
   preview.style.backgroundColor = backgroundColor;
@@ -42,7 +35,6 @@ function generateStyles() {
   copyButton.style.backgroundColor = backgroundColor;
 }
 
-// hex color 코드
 function hexToRgba(shadowColor, shadowOpacity) {
   const r = parseInt(shadowColor.substr(1, 2), 16);
   const g = parseInt(shadowColor.substr(3, 2), 16);
@@ -51,7 +43,6 @@ function hexToRgba(shadowColor, shadowOpacity) {
   return `rgba(${r}, ${g}, ${b}, ${shadowOpacity})`;
 }
 
-// 복사 함수
 function copyStyles() {
   styles.select();
   document.execCommand("copy");
