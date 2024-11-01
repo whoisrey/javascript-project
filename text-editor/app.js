@@ -94,21 +94,17 @@ const highlighterRemover = (className) => {
 
 window.onload = intializer();
 
-// 이미지 삽입 버튼, 이미지 입력 필드 상수 선언
 const insertImageButton = document.getElementById("insertImage");
 const imageInput = document.getElementById("image-input");
 
-// 이미지 삽입 버튼 클릭 시 동작
 insertImageButton.addEventListener("click", () => {
   imageInput.click();
 });
 
-// 이미지 입력 필드 값이 변경
 imageInput.addEventListener("change", () => {
   const file = imageInput.files[0];
 
   if (file) {
-    // FileReader 객체
     const reader = new FileReader();
     reader.onload = function (event) {
       const imageElement = document.createElement("img");
@@ -120,19 +116,15 @@ imageInput.addEventListener("change", () => {
   }
 });
 
-// 글자수세기
 const updateCharacterCount = () => {
   const text = writingArea.innerText;
   const characterCount = text.trim().length;
-  // 글자 수를 표시할 요소를 선택합니다.
   const characterCountElement = document.getElementById("character-count");
   characterCountElement.textContent = characterCount;
 };
 
-// 텍스트 입력이 변경될 때마다 글자 수 업데이트 함수를 호출합니다.
 writingArea.addEventListener("input", updateCharacterCount);
 
-// 페이지 로드 시 초기 글자 수를 업데이트합니다.
 window.onload = () => {
   updateCharacterCount();
   intializer();
