@@ -29,11 +29,8 @@ const angle = 360 / items.length;
 let currAngle = 0;
 
 document.addEventListener("click", function (event) {
-  // 화면 오른쪽을 눌렀을 경우
   if (window.innerWidth / 2 < event.clientX) {
     currAngle += angle;
-
-    // 화면 왼쪽을 눌렀을 경우
   } else {
     currAngle -= angle;
   }
