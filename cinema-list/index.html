@@ -1,294 +1,302 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>정글 시네마</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>정글 시네마 영화 목록</h1>
-      <nav class="cinema-nav">
-        <ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정글 시네마</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>정글 시네마 영화 목록</h1>
+        <nav class="cinema-nav">
+          <ul>
+            <li>
+              <button type="button" class="active">현재상영목록</button>
+            </li>
+            <li>
+              <button type="button">개봉예정영화</button>
+            </li>
+            <li>
+              <button type="button">박스오피스</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h2 class="a11y-hidden">현재상영영화</h2>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img1.jpg" alt="" />
+            <h3 class="cinema-title">위니브월드: 새로운 시대</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>판타지</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">9.05</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-03-27">2021.03.27</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img2.jpg" alt="" />
+            <h3 class="cinema-title ellipsis">
+              눈떠보니 코딩테스트 전날 With.JAVA
+            </h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>스릴러</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">8.25</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-03-27">2021.04.01</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">자바독, 개리씨, 빙키</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img3.jpg" alt="" />
+            <h3 class="cinema-title">파이썬 부트캠프</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>드라마</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">8.77</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-03-27">2021.04.12</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">캣, 파이, 썬, 뮤라</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img4.jpg" alt="" />
+            <h3 class="cinema-title">파이큐티의 사랑</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>로맨스</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">8.81</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-04-08">2021.04.08</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">파이썬, 큐티</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img5.jpg" alt="" />
+            <h3 class="cinema-title">NGINX의 춤</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>드라마</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">9.88</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-04-15">2021.04.15</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">NGINX, 노선</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img6.jpg" alt="" />
+            <h3 class="cinema-title">어쩌다 밋업</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>드라마</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">9.25</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-04-17">2021.04.17</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">라이캣, 자바독, 소울곰</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img7.jpg" alt="" />
+            <h3 class="cinema-title">파이게임 어드벤처</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>판타지액션</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">8.56</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-04-05">2021.04.05</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">개리씨, 파이썬</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+        <article class="cinema-card">
+          <div class="cinema-contents">
+            <img src="./img/poster-img8.jpg" alt="" />
+            <h3 class="cinema-title">MBIT는 내 운명</h3>
+            <ul class="cinema-info">
+              <li>
+                <span>개요</span>
+                <span>로맨스</span>
+              </li>
+              <li>
+                <span>평점</span>
+                <span class="star">9.02</span>
+              </li>
+              <li>
+                <span>개봉</span>
+                <time datetime="2021-04-12">2021.04.12</time>
+              </li>
+              <li>
+                <span class="tit">출연</span>
+                <span class="ellipsis">라이캣, 개리씨, 자바독</span>
+              </li>
+            </ul>
+          </div>
+          <div class="button-group">
+            <a href="#">예매하기</a>
+            <button type="button">예고편</button>
+          </div>
+        </article>
+      </main>
+    </div>
+    <footer class="cinema-footer">
+      <div class="a">
+        <h2>Jungle Cinema</h2>
+        <ul class="icons">
           <li>
-            <button type="button" class="active">현재상영목록</button>
+            <a class="twitter" href="#">
+              <img src="./img/icon-twitter.svg" alt="twitter" />
+            </a>
           </li>
           <li>
-            <button type="button">개봉예정영화</button>
+            <a class="instagram" href="#">
+              <img src="./img/icon-instagram.svg" alt="instagram" />
+            </a>
           </li>
           <li>
-            <button type="button">박스오피스</button>
+            <a class="facebook" href="#">
+              <img src="/img/icon-facebook.svg" alt="facebook" />
+            </a>
           </li>
         </ul>
-      </nav>
-    </header>
-    <main>
-      <h2 class="a11y-hidden">현재상영영화</h2>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img1.jpg" alt="">
-          <h3 class="cinema-title">위니브월드: 새로운 시대</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>판타지</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">9.05</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-03-27">2021.03.27</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">라이캣, 소울곰, 개리씨</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img2.jpg" alt="">
-          <h3 class="cinema-title ellipsis">눈떠보니 코딩테스트 전날 With.JAVA</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>스릴러</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">8.25</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-03-27">2021.04.01</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">자바독, 개리씨, 빙키</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img3.jpg" alt="">
-          <h3 class="cinema-title">파이썬 부트캠프</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>드라마</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">8.77</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-03-27">2021.04.12</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">캣, 파이, 썬, 뮤라</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img4.jpg" alt="">
-          <h3 class="cinema-title">파이큐티의 사랑</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>로맨스</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">8.81</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-04-08">2021.04.08</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">파이썬, 큐티</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img5.jpg" alt="">
-          <h3 class="cinema-title">NGINX의 춤</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>드라마</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">9.88</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-04-15">2021.04.15</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">NGINX, 노선</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img6.jpg" alt="">
-          <h3 class="cinema-title">어쩌다 밋업</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>드라마</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">9.25</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-04-17">2021.04.17</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">라이캣, 자바독, 소울곰</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img7.jpg" alt="">
-          <h3 class="cinema-title">파이게임 어드벤처</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>판타지액션</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">8.56</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-04-05">2021.04.05</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">개리씨, 파이썬</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-      <article class="cinema-card">
-        <div class="cinema-contents">
-          <img src="./img/poster-img8.jpg" alt="">
-          <h3 class="cinema-title">MBIT는 내 운명</h3>
-          <ul class="cinema-info">
-            <li>
-              <span>개요</span>
-              <span>로맨스</span>
-            </li>
-            <li>
-              <span>평점</span>
-              <span class="star">9.02</span>
-            </li>
-            <li>
-              <span>개봉</span>
-              <time datetime="2021-04-12">2021.04.12</time>
-            </li>
-            <li>
-              <span class="tit">출연</span>
-              <span class="ellipsis">라이캣, 개리씨, 자바독</span>
-            </li>
-          </ul>
-        </div>
-        <div class="button-group">
-          <a href="#">예매하기</a>
-          <button type="button">예고편</button>
-        </div>
-      </article>
-    </main>
-  </div>
-  <footer class="cinema-footer">
-    <div class="a">
-      <h2>Jungle Cinema</h2>
-      <ul class="icons">
-        <li><a class="twitter" href="#">
-            <img src="./img/icon-twitter.svg" alt="twitter">
-          </a></li>
-        <li><a class="instagram" href="#">
-            <img src="./img/icon-instagram.svg" alt="instagram">
-          </a></li>
-        <li><a class="facebook" href="#">
-            <img src="/img/icon-facebook.svg" alt="facebook">
-          </a></li>
-      </ul>
-    </div>
-    <div class="b">
-      <ul>
-        <li>(주) 정글 시네마 |</li>
-        <li>
-          <span>대표 </span>
-          <span>라이언 |</span>
-        </li>
-        <li>
-          <span>사업자 번호</span>
-          <span>000-0000-0000 |</span>
-        </li>
-        <li>
-          <span>광고 영화 및 비디오물 제작업 |</span>
-        </li>
-        <li>
-          <span>주소</span>
-          <span>서울특별시</span>
-        </li>
-      </ul>
-      <p>ⓒ The Jungle</p>
-    </div>
-  </footer>
-</body>
+      </div>
+      <div class="b">
+        <ul>
+          <li>(주) 정글 시네마 |</li>
+          <li>
+            <span>대표 </span>
+            <span>라이언 |</span>
+          </li>
+          <li>
+            <span>사업자 번호</span>
+            <span>000-0000-0000 |</span>
+          </li>
+          <li>
+            <span>광고 영화 및 비디오물 제작업 |</span>
+          </li>
+          <li>
+            <span>주소</span>
+            <span>서울특별시</span>
+          </li>
+        </ul>
+        <p>ⓒ The Jungle</p>
+      </div>
+    </footer>
+  </body>
 </html>
