@@ -1,4 +1,3 @@
-// reviews 라는 배열 id, name, job, img, text 프로퍼티를 갖고 있음
 const reviews = [
   {
     id: 1,
@@ -30,7 +29,6 @@ const reviews = [
   },
 ];
 
-// 클래스와 아이디로 아이템들을 선택
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
@@ -40,7 +38,6 @@ const nextBtn = document.querySelector(".next-btn");
 const randomBtn = document.querySelector(".random-btn");
 const resetBtn = document.querySelector(".reset-btn");
 
-// 색 아이템들 선택
 const colors = [
   "#7CB9E8o",
   "#6CB4EE",
@@ -51,15 +48,12 @@ const colors = [
   "#034694",
 ];
 
-// 초기값 설정
 let currentItem = 0;
 
-// 시작 페이지 불러오기
 window.addEventListener("DOMContentLoaded", function () {
   showPerson();
 });
 
-// showPerson() 함수 정의 (reviews 정보 담아오기)
 function showPerson() {
   const item = reviews[currentItem];
   img.src = item.img;
@@ -68,7 +62,6 @@ function showPerson() {
   info.textContent = item.text;
 }
 
-// next 버튼 클릭했을 때 이벤트 효과
 nextBtn.addEventListener("click", function () {
   const randomNumber = getRandomNumber();
   document.body.style.backgroundColor = colors[randomNumber];
@@ -80,7 +73,6 @@ nextBtn.addEventListener("click", function () {
   showPerson();
 });
 
-// prev 버튼 클릭했을 때 이벤트 효과
 prevBtn.addEventListener("click", function () {
   const randomNumber = getRandomNumber();
   document.body.style.background = colors[randomNumber];
@@ -91,13 +83,11 @@ prevBtn.addEventListener("click", function () {
   showPerson();
 });
 
-// 아무거나 버튼 클릭했을 때 이벤트 효과
 randomBtn.addEventListener("click", function () {
   const color1 = getRandomColor();
   const color2 = getRandomColor();
   document.body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
   function getRandomColor() {
-    // 16진수 색상 코드를 생성합니다.
     const letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
@@ -108,14 +98,12 @@ randomBtn.addEventListener("click", function () {
   showPerson();
 });
 
-// 초기화 버튼 클릭했을 때 이벤트 효과
 resetBtn.addEventListener("click", function () {
   document.body.style.background = "hsl(210, 36%, 96%)";
   currentItem = 0;
   showPerson();
 });
 
-// getRandomNumber() 함수 정의
 function getRandomNumber() {
   return Math.floor(Math.random() * colors.length);
 }
