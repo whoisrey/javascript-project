@@ -7,16 +7,15 @@ const titleText = document.getElementById("title");
 const saveBtn = document.getElementById("save-btn");
 const clearBtn = document.getElementById("clear-btn");
 
-// 저장된 메모가 있는지 확인
 if (localStorage.getItem("memo")) {
   memoText.value = localStorage.getItem("memo");
 }
-// 저장 버튼 클릭 이벤트
+
 saveBtn.addEventListener("click", () => {
   localStorage.setItem("memo", memoText.value);
   alert("Your text has been successfully saved!");
 });
-// 초기화 버튼 클릭 이벤트
+
 clearBtn.addEventListener("click", () => {
   localStorage.removeItem("memo");
   titleText.value = "";
@@ -24,7 +23,6 @@ clearBtn.addEventListener("click", () => {
   alert("Your texts have been removed.");
 });
 
-// 메모 저장
 function saveNote() {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
@@ -35,7 +33,6 @@ function saveNote() {
   render();
 }
 
-// 포스트잇 추가 기능 (포스트잇 스타일, 삭제버튼)
 function render() {
   const display = document.getElementById("display");
   display.innerHTML = "";
@@ -73,7 +70,6 @@ function render() {
   }
 }
 
-// 메모 삭제
 function remove() {
   const idx = allMemo.find((item) => item.len == event.srcElement.id);
   if (idx) {
