@@ -31,7 +31,6 @@ const flipper = document.querySelector(".flipper");
 function fetchWeatherData(location) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
 
-  // Weather Data From API
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
@@ -40,7 +39,6 @@ function fetchWeatherData(location) {
       const temperatureValue = parseInt(data.list[0].main.temp);
       const todayWeatherIconCode = data.list[0].weather[0].icon;
 
-      // Background Image Changed By Weather
       if (temperatureValue >= 30) {
         leftInfo.style.backgroundImage = 'url("./images/fire.jpg")';
         back.style.backgroundImage = 'url("./images/hot.jpeg")';
@@ -118,7 +116,6 @@ function fetchWeatherData(location) {
       todayWeatherIcon.className = `bx bx-${weatherIconMap[todayWeatherIconCode]}`;
       todayTemp.textContent = todayTemperature;
 
-      // left-info
       const locationElement = document.querySelector(
         ".today-info > div > span"
       );
@@ -128,7 +125,6 @@ function fetchWeatherData(location) {
       );
       weatherDescriptionElement.textContent = todayWeather;
 
-      // day-info
       const todayPrecipitation = `${data.list[0].pop}%`;
       const todayHumidity = `${data.list[0].main.humidity}%`;
       const todayWindSpeed = `${data.list[0].wind.speed} km/h`;
@@ -148,7 +144,6 @@ function fetchWeatherData(location) {
             </div>
         `;
 
-      // After 4 Days
       const today = new Date();
       const nextDaysData = data.list.slice(1);
       const uniqueDays = new Set();
@@ -185,24 +180,20 @@ function fetchWeatherData(location) {
     });
 }
 
-// Default Location (Seoul)
 document.addEventListener("DOMContentLoaded", () => {
   const defaultLocation = "Seoul";
   fetchWeatherData(defaultLocation);
 });
 
-// Modal
 const modal = document.getElementById("modal-container");
 const modalSubmitButton = document.getElementById("modal-submit");
 const modalCloseButton = document.getElementsByClassName("close")[0];
 
-// Search Button
 locButton.addEventListener("click", () => {
   modal.style.display = "block";
   modal.style.animation = "fadeIn 0.5s ease forwards";
 });
 
-// Close Button
 modalCloseButton.addEventListener("click", () => {
   modal.style.display = "none";
   modal.style.animation = "none";
@@ -213,7 +204,6 @@ modalCloseButton.addEventListener("click", () => {
   }, 500);
 });
 
-// Submit Button
 modalSubmitButton.addEventListener("click", () => {
   const locationInput = document.getElementById("location");
   const location = locationInput.value;
@@ -228,7 +218,6 @@ modalSubmitButton.addEventListener("click", () => {
   }
 });
 
-// rotate
 flipper.addEventListener("click", () => {
   flipper.style.transform =
     flipper.style.transform === "rotateY(0deg)"
