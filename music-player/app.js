@@ -47,16 +47,13 @@ function togglePlay() {
 function playMusic() {
   isPlaying = true;
   playBtn.classList.replace("fa-play", "fa-pause");
-  // Set button hover title
   playBtn.setAttribute("title", "Pause");
   music.play();
 }
 
 function pauseMusic() {
   isPlaying = false;
-  // Change pause button icon
   playBtn.classList.replace("fa-pause", "fa-play");
-  // Set button hover title
   playBtn.setAttribute("title", "Play");
   music.pause();
 }
@@ -104,7 +101,6 @@ playerProgress.addEventListener("click", setProgressBar);
 
 loadMusic(songs[musicIndex]);
 
-// Repeat //
 const repeatBtn = document.getElementById("repeat");
 
 function toggleRepeat() {
@@ -121,7 +117,6 @@ function toggleRepeat() {
 
 repeatBtn.addEventListener("click", toggleRepeat);
 
-// Shuffle //
 const shuffleBtn = document.getElementById("shuffle");
 let shuffleMode = false;
 
