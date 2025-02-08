@@ -16,23 +16,19 @@ const options = {
   fullscreen: true,
 };
 
-// Function to set background position for slides
 function setBgPosition(slide, index) {
   const x = -(slide.target + flkty.x) / 3;
   slides[index].style.backgroundPosition = `${x}px`;
 }
 
-// Slides initialization
 const carousel = document.querySelector("[carousel]");
 const slides = Array.from(document.getElementsByClassName("carousel-cell"));
 const flkty = new Flickity(carousel, options);
 
-// Event listener using bg position
 flkty.on("scroll", () => {
   flkty.slides.forEach(setBgPosition);
 });
 
-// Flickity autoplay control
 const playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", function () {
   flkty.playPlayer();
@@ -43,7 +39,6 @@ stopButton.addEventListener("click", function () {
   flkty.stopPlayer();
 });
 
-// Resize
 const resizeButton = document.querySelector(".button--resize");
 resizeButton.addEventListener("click", function () {
   carousel.classList.toggle("isexpanded");
@@ -56,19 +51,15 @@ resizeButton.addEventListener("click", function () {
 //   flkty.viewFullscreen();
 // });
 
-// Fullscreen
 var viewFullscreenButton = document.querySelector(".view-fullscreen-button");
 viewFullscreenButton.addEventListener("click", function () {
   if (carousel.requestFullscreen) {
     carousel.requestFullscreen();
   } else if (carousel.mozRequestFullScreen) {
-    // Firefox
     carousel.mozRequestFullScreen();
   } else if (carousel.webkitRequestFullscreen) {
-    // Chrome, Safari and Opera
     carousel.webkitRequestFullscreen();
   } else if (carousel.msRequestFullscreen) {
-    // IE/Edge
     carousel.msRequestFullscreen();
   }
 });
