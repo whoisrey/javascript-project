@@ -7,7 +7,6 @@ const copyBtn = document.querySelector(".copy");
 const textArea = document.querySelector("textarea");
 const qrCodeApiUrl = "https://api.qrserver.com/v1/read-qr-code/";
 
-// To fetch file, formData
 function fetchRequest(file, formData) {
   infoText.innerText = "Scanning QR Code...";
   fetch(qrCodeApiUrl, {
@@ -71,7 +70,6 @@ closeBtn.addEventListener("click", (e) => {
   fileInp.value = "";
 });
 
-// Copy Button
 copyBtn.addEventListener("click", () => {
   if (textArea) {
     const textToCopy = textArea.value;
@@ -81,7 +79,6 @@ copyBtn.addEventListener("click", () => {
   }
 });
 
-// To copy text to Clipboard
 function copyText(text) {
   const textarea = document.createElement("textarea");
   textarea.value = text;
