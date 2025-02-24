@@ -15,7 +15,6 @@ search.addEventListener("click", () => {
   )
     .then((response) => response.json())
     .then((json) => {
-      // API 응답에서 'cod' 필드는 숫자로 반환되기 때문에 '404' 를 404로 수정
       if (json.cod === "404") {
         container.style.height = "400px";
         weatherBox.style.display = "none";
@@ -61,10 +60,12 @@ search.addEventListener("click", () => {
           image.src = "";
       }
 
-      temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+      temperature.innerHTML = `${Number.parseInt(
+        json.main.temp
+      )}<span>°C</span>`;
       description.innerHTML = `${json.weather[0].description}`;
       humidity.innerHTML = `${json.main.humidity}%`;
-      wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+      wind.innerHTML = `${Number.parseInt(json.wind.speed)}Km/h`;
 
       weatherBox.style.display = "";
       weatherDetails.style.display = "";
