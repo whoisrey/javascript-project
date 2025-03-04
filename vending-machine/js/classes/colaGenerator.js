@@ -13,7 +13,6 @@ class ColaGenerator {
       const response = await fetch("./items.json");
 
       if (response.ok) {
-        // 서버의 응답 코드가 200 ~ 299 일 경우
         return response.json();
       } else {
         throw new Error(response.status);
