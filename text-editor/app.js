@@ -1,15 +1,15 @@
-let optionsButtons = document.querySelectorAll(".option-button");
-let advancedOptionButton = document.querySelectorAll(".adv-option-button");
-let fontName = document.getElementById("fontName");
-let fontSizeRef = document.getElementById("fontSize");
-let writingArea = document.getElementById("text-input");
-let linkButton = document.getElementById("createLink");
-let alignButtons = document.querySelectorAll(".align");
-let spacingButtons = document.querySelectorAll(".spacing");
-let formatButtons = document.querySelectorAll(".format");
-let scriptButtons = document.querySelectorAll(".script");
+const optionsButtons = document.querySelectorAll(".option-button");
+const advancedOptionButton = document.querySelectorAll(".adv-option-button");
+const fontName = document.getElementById("fontName");
+const fontSizeRef = document.getElementById("fontSize");
+const writingArea = document.getElementById("text-input");
+const linkButton = document.getElementById("createLink");
+const alignButtons = document.querySelectorAll(".align");
+const spacingButtons = document.querySelectorAll(".spacing");
+const formatButtons = document.querySelectorAll(".format");
+const scriptButtons = document.querySelectorAll(".script");
 
-let fontList = [
+const fontList = [
   "Arial",
   "BMJUA",
   "BMEULJIRO",
@@ -25,14 +25,14 @@ const intializer = () => {
   highlighter(scriptButtons, true);
 
   fontList.map((value) => {
-    let option = document.createElement("option");
+    const option = document.createElement("option");
     option.value = value;
     option.innerHTML = value;
     fontName.appendChild(option);
   });
 
   for (let i = 1; i <= 7; i++) {
-    let option = document.createElement("option");
+    const option = document.createElement("option");
     option.value = i;
     option.innerHTML = i;
     fontSizeRef.appendChild(option);
@@ -62,7 +62,7 @@ linkButton.addEventListener("click", () => {
   if (/http/i.test(userLink)) {
     modifyText(linkButton.id, false, userLink);
   } else {
-    userLink = "http://" + userLink;
+    userLink = `http://${userLink}`;
     modifyText(linkButton.id, false, userLink);
   }
 });
@@ -106,7 +106,7 @@ imageInput.addEventListener("change", () => {
 
   if (file) {
     const reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = (event) => {
       const imageElement = document.createElement("img");
       imageElement.src = event.target.result;
       writingArea.appendChild(imageElement);
